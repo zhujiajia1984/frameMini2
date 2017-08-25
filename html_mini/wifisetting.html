@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>管理平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
+    <div class="page-wrapper">
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="javascript:;">
+                    <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" width="87" height="14"/> </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <span></span>
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                <span></span>
+            </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <span class="username username-hide-on-mobile"> Nick </span>
+                            <!--<i class="fa fa-angle-down"></i>-->
+                        </a>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <li class="dropdown dropdown-quick-sidebar-toggler">
+                            <a href="javascript:;" class="dropdown-toggle">
+                            <i class="icon-logout"></i>
+                        </a>
+                        </li>
+                        <!-- END QUICK SIDEBAR TOGGLER -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        <div class="clearfix"></div>
+        <div class="page-container">
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+                    <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <li class="sidebar-search-wrapper">
+                        </li>
+                        <li class="nav-item start">
+                            <a href="index.html" class="nav-link nav-toggle">
+                            <i class="icon-home"></i>
+                            <span class="title">系统状态</span>
+                            <span class="arrow"></span>
+                        </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item start">
+                                    <a href="index.html" class="nav-link ">
+                                    <i class="icon-bar-chart"></i>
+                                    <span class="title">系统总览</span>
+                                </a>
+                                </li>
+                                <li class="nav-item start">
+                                    <a href="quickConfig.html" class="nav-link ">
+                                    <i class="icon-bulb"></i>
+                                    <span class="title">快速配置</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  active">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="icon-diamond"></i>
+                            <span class="title">网络管理</span>
+                            <span class="arrow open"></span>
+                        </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="networksetting.html" class="nav-link ">
+                                    <i class="icon-bulb"></i>
+                                    <span class="title">网络设置</span>
+                                </a>
+                                </li>
+                                <li class="nav-item open ">
+                                    <a href="wifisetting.html" class="nav-link ">
+                                    <i class="icon-bulb"></i>
+                                    <span class="title">无线设置</span>
+                                    <span class="selected"></span>
+
+                                </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="icon-diamond"></i>
+                            <span class="title">系统工具</span>
+                            <span class="arrow"></span>
+                        </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="systemInfo.html" class="nav-link ">
+                                    <i class="icon-bulb"></i>
+                                    <span class="title">基础信息管理</span>
+                                </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="systemUpdate.html" class="nav-link ">
+                                    <i class="icon-bulb"></i>
+                                    <span class="title">固件管理</span>
+                                </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="systemReboot.html" class="nav-link ">
+                                    <i class="icon-bulb"></i>
+                                    <span class="title">重启管理</span>
+                                </a>
+                                </li>
+                                >
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <span>网络管理</span>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <span>无线设置</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h1 class="page-title">无线设置
+                    <small></small>
+                </h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tabbable-line boxless tabbable-reversed">
+                                <ul class="nav nav-tabs" id="navTabs">
+                                    <li class="active" id="liTab_0">
+                                        <a href="tab_0" data-toggle="tab" aria-expanded="true">0</a>
+                                    </li>
+                                    <li class="" id="liTab_1">
+                                        <a href="tab_1" data-toggle="tab" aria-expanded="false">1</a>
+                                    </li>
+                                    <li class="" id="liTab_2">
+                                        <a href="tab_2" data-toggle="tab" aria-expanded="false">2</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="tabContentPage">
+                                    <div class="tab-pane active" id="tab_0">
+                                        <div class="portlet box blue " id="porletBox">
+                                            <div class="portlet-title">
+                                                <div class="caption" id="captionTabs_0">
+                                                    <i class="fa fa-gift"></i>2.4G无线设置
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body form">
+                                                <!-- BEGIN FORM-->
+                                                <form action="#" class="form-horizontal form-bordered">
+                                                    <div class="form-body">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线开关</label>
+                                                            <div class="col-md-6">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv" pwd="switchNextAll">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">SSID名称</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="不超过32个字符" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线信道</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">自动</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">信道1</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线协议</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">802.11/b/g/n</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">802.11n</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线频宽</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">20MHz</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">40MHz</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线功率</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">自动(30)</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">6dBm</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">SSID显示</label>
+                                                            <div class="col-md-6">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">密码开关</label>
+                                                            <div class="col-md-4">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv" pwd="switchPwd">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线密码</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="不超过32个字符" class="form-control" value="dbyanfa-2.4G">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">加密方式</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">WPA/WPA2混合</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">WPA</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">加密算法</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">AES/TKIP混合</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">AES</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-offset-3 col-md-9">
+                                                                        <button type="submit" class="btn green" id="saveBtn">
+                                                                            <i class="fa fa-check"></i> 保存
+                                                                        </button>
+                                                                        <button type="button" class="btn red">
+                                                                            <i class="fa fa-warning"></i>复位
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <!-- END FORM-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab_1">
+                                        <div class="portlet box blue ">
+                                            <div class="portlet-title">
+                                                <div class="caption" id="captionTabs_1">
+                                                    <i class="fa fa-gift"></i>5.8G无线设置
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body form">
+                                                <!-- BEGIN FORM-->
+                                                <form action="#" class="form-horizontal form-bordered">
+                                                    <div class="form-body">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线开关</label>
+                                                            <div class="col-md-6">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv" pwd="switchNextAll">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">SSID名称</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="不超过32个字符" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线信道</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">自动</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">信道1</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线协议</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">802.11/b/g/n</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">802.11n</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线频宽</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">20MHz</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">40MHz</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线功率</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">自动(30)</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">6dBm</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">SSID显示</label>
+                                                            <div class="col-md-6">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">密码开关</label>
+                                                            <div class="col-md-4">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv" pwd="switchPwd">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线密码</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="不超过32个字符" class="form-control" value="dbyanfa-2.4G">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">加密方式</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">WPA/WPA2混合</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">WPA</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">加密算法</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">AES/TKIP混合</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">AES</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-offset-3 col-md-9">
+                                                                        <button type="submit" class="btn green">
+                                                                            <i class="fa fa-check"></i> 保存
+                                                                        </button>
+                                                                        <button type="button" class="btn red">
+                                                                            <i class="fa fa-warning"></i> 复位
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <!-- END FORM-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab_2">
+                                        <div class="portlet box blue ">
+                                            <div class="portlet-title">
+                                                <div class="caption" id="captionTabs_2">
+                                                    <i class="fa fa-gift"></i>5.8G无线设置
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body form">
+                                                <!-- BEGIN FORM-->
+                                                <form action="#" class="form-horizontal form-bordered">
+                                                    <div class="form-body">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线开关</label>
+                                                            <div class="col-md-6">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv" pwd="switchNextAll">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">SSID名称</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="不超过32个字符" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线信道</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">自动</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">信道1</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线协议</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">802.11/b/g/n</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">802.11n</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线频宽</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">20MHz</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">40MHz</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线功率</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">自动(30)</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">6dBm</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">SSID显示</label>
+                                                            <div class="col-md-6">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">密码开关</label>
+                                                            <div class="col-md-4">
+                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
+                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-on" style="width: 69px;" name="switchDiv" pwd="switchPwd">
+                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
+                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">无线密码</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="不超过32个字符" class="form-control" value="dbyanfa-2.4G">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">加密方式</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">WPA/WPA2混合</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">WPA</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">加密算法</label>
+                                                            <div class="col-md-6">
+                                                                <div class="btn-group bootstrap-select bs-select form-control">
+                                                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false"><span class="filter-option pull-left">AES/TKIP混合</span>&nbsp;<span class="bs-caret"><span
+                                                                        class="caret"></span></span>
+                                                                    </button>
+                                                                    <div class="dropdown-menu open" role="combobox" style="max-height: 512.6px; overflow: hidden; min-height: 0px;">
+                                                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 510.6px; overflow-y: auto; min-height: 0px;">
+                                                                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">AES</span><span
+                                                                                class="fa fa-check check-mark"></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-offset-3 col-md-9">
+                                                                        <button type="submit" class="btn green">
+                                                                            <i class="fa fa-check"></i> 保存
+                                                                        </button>
+                                                                        <button type="button" class="btn red">
+                                                                            <i class="fa fa-warning"></i> 复位
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <!-- END FORM-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script>
+<script src="../assets/global/plugins/ie8.fix.min.js"></script>
+<![endif]-->
+    <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>-->
+    <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        // 根据网卡数量显示和隐藏tab页
+        var tabs = ["2.4G", "5.8G", "5.8G"];
+        $("#navTabs").children().hide();
+        $("#tabContentPage").children().hide();
+        for (var i = 0; i < tabs.length; i++) {
+            // 显示需要的tab标题
+            var liTabId = "liTab_" + i;
+            var $li = $("#" + liTabId);
+            $li.children().text(tabs[i]);
+            $li.show();
+        }
+        // 显示默认tab
+        $("#tab_0").show();
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        // 点击tab表头切换页面
+        $("a[data-toggle = tab]").click(function(e) {
+            e.stopPropagation(); // 阻止冒泡
+            e.preventDefault(); // 阻止默认事件
+            $("#navTabs").children().removeClass("active"); // 清空选中
+            $(this).parent().addClass("active"); // 选中表头
+            $("#tabContentPage").children().removeClass("active")
+                .hide(); // 清空内容并隐藏所有tab页
+            var $id = $(this).attr("href");
+            $("#" + $id).addClass("active")
+                .show(); // 激活内容并显示当前tab页
+        })
+    })
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    // 切换开关
+    $("div[name=switchDiv]").click(function() {
+        if ($(this).hasClass("bootstrap-switch-on")) {
+            // 切换到off
+            $(this).removeClass("bootstrap-switch-on");
+            $(this).addClass("bootstrap-switch-off");
+            $(this).children().first().css("margin-left", "-33px");
+            // 切换无线开关
+            if ($(this).attr("pwd") == "switchNextAll") {
+                $(this).parent().parent().next().hide()
+                    .next().hide().next().hide().next().hide().next().hide().next().hide()
+                    .next().hide().next().hide().next().hide().next().hide();
+
+            } else if ($(this).attr("pwd") == "switchPwd") {
+                // 切换密码开关
+                $(this).parent().parent().next().hide()
+                    .next().hide()
+                    .next().hide();
+            }
+        } else {
+            // 切换到on
+            $(this).removeClass("bootstrap-switch-off");
+            $(this).addClass("bootstrap-switch-on");
+            $(this).children().first().css("margin-left", "0px");
+            // 切换密码开关
+            if ($(this).attr("pwd") == "switchNextAll") {
+                var $switchPwd = $(this).parent().parent().next().next().next().next().next().next().next()
+                    .find("div[pwd=switchPwd]");
+                if ($switchPwd.hasClass("bootstrap-switch-on")) { //如果密码开关为开
+                    $(this).parent().parent().next().show()
+                        .next().show().next().show().next().show().next().show().next().show()
+                        .next().show().next().show().next().show().next().show();
+                } else {
+                    //密码开关为关
+                    $(this).parent().parent().next().show()
+                        .next().show().next().show().next().show().next().show().next().show()
+                        .next().show()
+                }
+
+            } else if ($(this).attr("pwd") == "switchPwd") {
+                $(this).parent().parent().next().show()
+                    .next().show()
+                    .next().show();
+            }
+        }
+    })
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    // 保存按钮
+    $("#saveBtn").click(function() {
+        //        App.blockUI({
+        //            target: '#porletBox',
+        //            boxed: true,
+        //            message: '配置加载中...'
+        //        });
+        //        window.setTimeout(function() {
+        //            App.unblockUI('#porletBox');
+        //        }, 2000);
+        App.blockUI({
+            boxed: true,
+            message: '配置加载中...'
+        });
+
+        window.setTimeout(function() {
+            alert("abc");
+            App.unblockUI();
+        }, 1000)
+
+    })
+    </script>
+</body>
+
+</html>
