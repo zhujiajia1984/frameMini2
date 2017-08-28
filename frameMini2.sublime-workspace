@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"loca",
+				"location"
+			],
+			[
+				"vl",
+				"vlan.html"
+			],
+			[
+				"add",
+				"addSSID"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
 				"Pro",
 				"ProfilePage"
 			],
@@ -71,6 +87,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "html_mini/vlan.html",
+			"settings":
+			{
+				"buffer_size": 22166,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -79,8 +104,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 173.0,
-		"last_filter": "install",
+		"height": 265.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -152,11 +177,11 @@
 				"npm: Run Script"
 			]
 		],
-		"width": 464.0
+		"width": 528.0
 	},
 	"console":
 	{
-		"height": 307.0,
+		"height": 259.0,
 		"history":
 		[
 			"ggg",
@@ -176,11 +201,17 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Project/web/frameMini2"
+		"/D/Project/web/frameMini2",
+		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
 		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
+		"/D/Project/web/frameMini2/html_mini/wifisetting - 副本.html",
+		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/D/Project/web/frameMini2/html_mini/.eslintrc.js",
+		"/D/Project/web/frameMini2/html_mini/vlan2.html",
+		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
 		"/D/Project/web/bootstrap-table-examples/welcome.html",
 		"/D/360云盘/资料文档/01_多倍通工作资料/05_产品需求文档/04_胖AP本地管理后台V5.6/frameMini2/html_mini/wifiPorbe.html",
 		"/D/Project/react/reactNative/myapp/pages/Index.js",
@@ -250,7 +281,6 @@
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
 		"/D/360云盘/资料文档/01_多倍通工作资料/99_微信小程序_公众号学习_APP_react学习/weui学习.txt",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/HTMLPrettify.sublime-settings",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
 		"/D/React/reactJs/.babelrc",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/npm/npm.sublime-settings",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/npm.sublime-settings",
@@ -284,6 +314,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"复位",
+			"CPU占用率",
+			"vlan",
+			"operateEvents",
+			"保存",
+			"新增SSID",
+			"已连接终端",
+			"arrow",
+			">\n",
+			"css",
+			"\"codeintel_selected_catalogs",
 			"analytics.js",
 			"update",
 			"add",
@@ -300,6 +341,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"取消"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -310,8 +352,43 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "html_mini/vlan.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21466,
+								21466
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"open_with_edit": true,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9890.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -354,7 +431,7 @@
 	"project": "frameMini2.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":

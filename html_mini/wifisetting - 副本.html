@@ -333,23 +333,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-3">VLAN开关</label>
-                                                            <div class="col-md-4">
-                                                                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini
-                                                bootstrap-switch-id-test bootstrap-switch-animate bootstrap-switch-off" style="width: 69px;" name="switchDiv" pwd="switchVLAN">
-                                                                    <div class="bootstrap-switch-container" style="width: 100px; margin-left: -33px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 33px;">ON</span><span class="bootstrap-switch-label" style="width: 33px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 33px;">OFF</span>
-                                                                        <input type="checkbox" checked="" class="make-switch" id="test" data-size="mini">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group" style="display: none;">
-                                                            <label class="control-label col-md-3">VLAN ID</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" placeholder="请输入VLAN ID" class="form-control" value="">
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                     <div class="form-actions">
                                                         <div class="row">
@@ -360,7 +343,7 @@
                                                                             <i class="fa fa-check"></i> 保存
                                                                         </button>
                                                                         <button type="button" class="btn red">
-                                                                            <i class="fa fa-warning"></i>取消
+                                                                            <i class="fa fa-warning"></i>复位
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -540,7 +523,7 @@
                                                                             <i class="fa fa-check"></i> 保存
                                                                         </button>
                                                                         <button type="button" class="btn red">
-                                                                            <i class="fa fa-warning"></i> 取消
+                                                                            <i class="fa fa-warning"></i> 复位
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -720,7 +703,7 @@
                                                                             <i class="fa fa-check"></i> 保存
                                                                         </button>
                                                                         <button type="button" class="btn red">
-                                                                            <i class="fa fa-warning"></i> 取消
+                                                                            <i class="fa fa-warning"></i> 复位
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -755,7 +738,7 @@
     $(document).ready(function() {
         ///////////////////////////////////////////////////////////////////////////////////////////
         // 根据网卡数量显示和隐藏tab页
-        var tabs = ["2.4G"];
+        var tabs = ["2.4G", "5.8G", "5.8G"];
         $("#navTabs").children().hide();
         $("#tabContentPage").children().hide();
         for (var i = 0; i < tabs.length; i++) {
@@ -794,56 +777,38 @@
             if ($(this).attr("pwd") == "switchNextAll") {
                 $(this).parent().parent().next().hide()
                     .next().hide().next().hide().next().hide().next().hide().next().hide()
-                    .next().hide().next().hide().next().hide().next().hide().next().hide().next().hide();
+                    .next().hide().next().hide().next().hide().next().hide();
 
             } else if ($(this).attr("pwd") == "switchPwd") {
                 // 切换密码开关
                 $(this).parent().parent().next().hide()
                     .next().hide()
                     .next().hide();
-            } else if ($(this).attr("pwd") == "switchVLAN") {
-                // 切换vlan开关
-                $(this).parent().parent().next().hide();
             }
         } else {
             // 切换到on
             $(this).removeClass("bootstrap-switch-off");
             $(this).addClass("bootstrap-switch-on");
             $(this).children().first().css("margin-left", "0px");
-            // 切换无线开关
+            // 切换密码开关
             if ($(this).attr("pwd") == "switchNextAll") {
                 var $switchPwd = $(this).parent().parent().next().next().next().next().next().next().next()
                     .find("div[pwd=switchPwd]");
-                var $switchVLAN = $(this).parent().parent().next().next().next().next().next().next().next().next().next().next().next().find("div[pwd=switchVLAN]");
                 if ($switchPwd.hasClass("bootstrap-switch-on")) { //如果密码开关为开
                     $(this).parent().parent().next().show()
                         .next().show().next().show().next().show().next().show().next().show()
                         .next().show().next().show().next().show().next().show();
-                    // VLAN开关判断
-                    if ($switchVLAN.hasClass("bootstrap-switch-on")) {
-                        $(this).parent().parent().next().next().next().next().next().next().next().next().next().next().next().show().next().show();
-                    } else {
-                        $(this).parent().parent().next().next().next().next().next().next().next().next().next().next().next().show();
-                    }
                 } else {
                     //密码开关为关
                     $(this).parent().parent().next().show()
                         .next().show().next().show().next().show().next().show().next().show()
-                        .next().show();
-                    // VLAN开关判断
-                    if ($switchVLAN.hasClass("bootstrap-switch-on")) {
-                        $(this).parent().parent().next().next().next().next().next().next().next().next().next().next().next().show().next().show();
-                    } else {
-                        $(this).parent().parent().next().next().next().next().next().next().next().next().next().next().next().show();
-                    }
+                        .next().show()
                 }
 
             } else if ($(this).attr("pwd") == "switchPwd") {
                 $(this).parent().parent().next().show()
                     .next().show()
                     .next().show();
-            } else if ($(this).attr("pwd") == "switchVLAN") {
-                $(this).parent().parent().next().show();
             }
         }
     })
@@ -851,7 +816,7 @@
     // 保存按钮
     $("#saveBtn").click(function() {
         event.preventDefault();
-        window.location.href = "./vlan.html?id=123";
+        window.location.href = "./vlan.html";
         //        App.blockUI({
         //            target: '#porletBox',
         //            boxed: true,
