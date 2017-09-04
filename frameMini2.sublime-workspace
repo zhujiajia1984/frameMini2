@@ -87,15 +87,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "html_mini/vlan.html",
-			"settings":
-			{
-				"buffer_size": 22166,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -181,7 +172,7 @@
 	},
 	"console":
 	{
-		"height": 259.0,
+		"height": 266.0,
 		"history":
 		[
 			"ggg",
@@ -202,10 +193,51 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
+		"/D/Project/web/frameMini2/assets",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
+		"/D/Project/web/frameMini2/frameMini2.sublime-project",
+		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
+		"/D/Project/web/frameMini2/html_mini/index - 副本.html",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index - 副本.html",
+		"/D/Project/web/frameMini2/html_mini/index.html",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
+		"/D/Project/web/frameMini2/html_mini/bootstrap_table_test.html",
+		"/D/Project/web/bootstrap-table-examples/methods/togglePagination.html",
+		"/D/Project/web/bootstrap-table-examples/extensions/cookie.html",
+		"/D/Project/web/bootstrap-table-examples/methods/template.js",
+		"/D/Project/web/bootstrap-table-examples/methods/showRow-hideRow.html",
+		"/D/Project/web/bootstrap-table-examples/methods/template.html",
+		"/D/Project/web/bootstrap-table-examples/methods/showLoading-hideLoading.html",
+		"/D/Project/web/bootstrap-table-examples/methods/selectPage-prevPage-nextPage.html",
+		"/D/Project/web/bootstrap-table-examples/methods/showColumn-hideCoulumn.html",
+		"/D/Project/web/bootstrap-table-examples/methods/scrollTo.html",
+		"/D/Project/web/bootstrap-table-examples/methods/resetSearch.html",
+		"/D/Project/web/bootstrap-table-examples/methods/removeByUniqueId.html",
+		"/D/Project/web/bootstrap-table-examples/methods/removeAll.html",
+		"/D/Project/web/bootstrap-table-examples/methods/remove.html",
+		"/D/Project/web/bootstrap-table-examples/methods/refreshOptions.html",
+		"/D/Project/web/bootstrap-table-examples/methods/refresh.html",
+		"/D/Project/web/bootstrap-table-examples/methods/prepend.html",
+		"/D/Project/web/bootstrap-table-examples/methods/mergeCells.html",
+		"/D/Project/web/bootstrap-table-examples/methods/load.html",
+		"/D/Project/web/bootstrap-table-examples/methods/insertRow.html",
+		"/D/Project/web/bootstrap-table-examples/methods/getSelections.html",
+		"/D/Project/web/bootstrap-table-examples/methods/getRowByUniqueId.html",
+		"/D/Project/web/bootstrap-table-examples/methods/getOptions.html",
+		"/C/Users/zjj/Desktop/-1503971086550.log",
+		"/D/Project/web/bootstrap-table-examples/methods/getData.html",
+		"/D/Project/web/bootstrap-table-examples/methods/getAllSelections.html",
+		"/D/Project/web/bootstrap-table-examples/methods/filterBy.html",
+		"/D/Project/web/bootstrap-table-examples/methods/expandRow-collapseRow.html",
+		"/D/Project/web/bootstrap-table-examples/methods/destroy.html",
+		"/D/Project/web/bootstrap-table-examples/methods/check-uncheck.html",
+		"/D/Project/web/bootstrap-table-examples/methods/checkBy-uncheckBy.html",
+		"/D/Project/web/frameMini2/html_mini/vlan.html",
+		"/D/Project/web/bootstrap-table-examples/methods/checkAll-uncheckAll.html",
+		"/D/Project/web/bootstrap-table-examples/methods/append.html",
 		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
 		"/D/Project/web/frameMini2/html_mini/wifisetting - 副本.html",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
@@ -293,9 +325,7 @@
 		"/D/React/test/.idea/workspace.xml",
 		"/D/React/reactJs/.idea/reactJs.iml",
 		"/C/Users/zjj/Desktop/react-devtools-2.5.0/shells/chrome/build.js",
-		"/D/React/test/.idea/dictionaries/zjj.xml",
-		"/D/React/reactJs/.idea/workspace.xml",
-		"/D/360云盘/资料文档/01_多倍通工作资料/99_微信小程序_公众号学习_APP_react学习/react学习.txt"
+		"/D/React/test/.idea/dictionaries/zjj.xml"
 	],
 	"find":
 	{
@@ -314,6 +344,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"showLoading",
+			"delSSID",
+			"ssid",
+			"uncheckAll",
+			"checkAll",
 			"复位",
 			"CPU占用率",
 			"vlan",
@@ -346,49 +381,14 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "html_mini/vlan.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22166,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21466,
-								21466
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_init_dirty_state": false,
-							"open_with_edit": true,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 9890.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
