@@ -201,6 +201,26 @@
                                                             <li>
                                                                 <a href="javascript:;" id="getAllSelections"> 获取当前选中行</a>
                                                             </li>
+                                                            <li class="divider"> </li>
+                                                            <li>
+                                                                <a href="javascript:;" id="getData"> 获取所有数据</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;" id="getCurData"> 获取当前页数据</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;" id="getOptions"> 获取options</a>
+                                                            </li>
+                                                            <li class="divider"> </li>
+                                                            <li>
+                                                                <a href="javascript:;" id="getRowByUniqueId"> 获取行数据通过uniqueID</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;" id="scrollTo"> scrollTo</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;" id="showLoading"> showLoading</a>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -267,9 +287,18 @@
             pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
             striped: true,
             toolbar: '#toolbar',
+            uniqueId: 'id', //每一行的唯一标识，一般为主键列
             columns: [{
                 field: 'state', // 必须要有，否则获取行会多出一个数据
                 checkbox: true, // 多选框
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+            }, { // id
+                field: 'id', // 键值列，隐藏
+                title: 'id',
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                visible: false, // 隐藏
             }, { // 表头
                 field: 'ssid', // 域名
                 title: 'SSID名称', //文字名称
@@ -383,40 +412,41 @@
                 events: 'operateEvents'
             }],
         });
-        var data = [{
-            ssid: '-',
-            wifiSwitch: 'Off',
-            wifiChannel: '-',
-            wifiProtocol: '-',
-            wifiBandWidth: '-',
-            wifiPower: '-',
-            ssidSwitch: '-',
-            pwdSwitch: '-',
-            vlan: '-'
-        }, {
-            ssid: 'DB25',
-            wifiSwitch: 'On',
-            wifiChannel: '自动',
-            wifiProtocol: '802.11n',
-            wifiBandWidth: '20MHz',
-            wifiPower: '10',
-            ssidSwitch: 'On',
-            pwdSwitch: 'Off',
-            vlan: '12'
-        }, {
-            ssid: 'DB26',
-            wifiSwitch: 'On',
-            wifiChannel: '自动',
-            wifiProtocol: '802.11n',
-            wifiBandWidth: '20MHz',
-            wifiPower: '10',
-            ssidSwitch: 'On',
-            pwdSwitch: 'Off',
-            vlan: '11'
-        }];
+        // var data = [{
+        //     ssid: '-',
+        //     wifiSwitch: 'Off',
+        //     wifiChannel: '-',
+        //     wifiProtocol: '-',
+        //     wifiBandWidth: '-',
+        //     wifiPower: '-',
+        //     ssidSwitch: '-',
+        //     pwdSwitch: '-',
+        //     vlan: '-'
+        // }, {
+        //     ssid: 'DB25',
+        //     wifiSwitch: 'On',
+        //     wifiChannel: '自动',
+        //     wifiProtocol: '802.11n',
+        //     wifiBandWidth: '20MHz',
+        //     wifiPower: '10',
+        //     ssidSwitch: 'On',
+        //     pwdSwitch: 'Off',
+        //     vlan: '12'
+        // }, {
+        //     ssid: 'DB26',
+        //     wifiSwitch: 'On',
+        //     wifiChannel: '自动',
+        //     wifiProtocol: '802.11n',
+        //     wifiBandWidth: '20MHz',
+        //     wifiPower: '10',
+        //     ssidSwitch: 'On',
+        //     pwdSwitch: 'Off',
+        //     vlan: '11'
+        // }];
+        var data = [];
         for (var i = 0; i < 20; i++) {
             data.push({
-                ssid: 'DB25',
+                ssid: 'DB' + i,
                 wifiSwitch: 'On',
                 wifiChannel: '自动',
                 wifiProtocol: '802.11n',
@@ -424,7 +454,8 @@
                 wifiPower: '10',
                 ssidSwitch: 'On',
                 pwdSwitch: 'Off',
-                vlan: '12'
+                vlan: '12',
+                id: i + '',
             })
         }
         $('#tableTab0').bootstrapTable('append', data);
@@ -479,18 +510,46 @@
 
         $('#getAllSelections').click(function(event) {
             event.preventDefault();
-            alert('getSelections: ' + JSON.stringify($('#tableTab0').bootstrapTable('getAllSelections')));
+            alert('getAllSelections: ' + JSON.stringify($('#tableTab0').bootstrapTable('getAllSelections')));
+            alert('getSelections: ' + JSON.stringify($('#tableTab0').bootstrapTable('getSelections')));
         })
 
         $('#delSSID').click(function(event) {
             event.preventDefault();
-            var ssids = $.map($('#tableTab0').bootstrapTable('getSelections'), function(row) {
-                return row.ssid;
+            var ids = $.map($('#tableTab0').bootstrapTable('getSelections'), function(row) {
+                return row.id;
             });
             $('#tableTab0').bootstrapTable('remove', {
-                field: 'ssid',
-                values: ssids
+                field: 'id',
+                values: ids
             });
+        })
+        $('#getData').click(function(event) {
+            event.preventDefault();
+            console.log(JSON.stringify($('#tableTab0').bootstrapTable('getData')));
+        })
+        $('#getCurData').click(function(event) {
+            event.preventDefault();
+            alert(JSON.stringify($('#tableTab0').bootstrapTable('getData', 'useCurrentPage')));
+        })
+        $('#getOptions').click(function(event) {
+            event.preventDefault();
+            console.log(JSON.stringify($('#tableTab0').bootstrapTable('getOptions')));
+        })
+        $('#getRowByUniqueId').click(function(event) {
+            event.preventDefault();
+            alert(JSON.stringify($('#tableTab0').bootstrapTable('getRowByUniqueId', 2)));
+        })
+        $('#scrollTo').click(function(event) {
+            event.preventDefault();
+            $('#tableTab0').bootstrapTable('scrollTo', 2);
+        })
+        $('#showLoading').click(function(event) {
+            event.preventDefault();
+            $('#tableTab0').bootstrapTable('showLoading');
+            setTimeout(function() {
+                $('#tableTab0').bootstrapTable('hideLoading');
+            }, 2000)
         })
     })
     ////////////////////////////////////////////////////////////////////////////////////////////////
