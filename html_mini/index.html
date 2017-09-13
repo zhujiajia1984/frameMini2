@@ -10,6 +10,7 @@
     <title>管理平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="../assets/global/plugins/iconfont/iconfont.css" type="text/css">
     <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -46,11 +47,42 @@
                 <!-- BEGIN TOP NAVIGATION MENU -->
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN NOTIFICATION DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after "dropdown-extended" to change the dropdown styte -->
+                        <!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+                        <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                    <i class="iconfont icon-yun" style="font-size: 20px" id="iconHeader"></i>
+                                    <span class="badge badge-default"> 云 </span>
+                                </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                            <span class="bold">设备模式</h3>
+                                    <a id="devModeChange">修改</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list" style="height: 50px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time" style="background-color: rgb(50,197,210);color: white;">已连接</span>
+                                                <span class="time" style="background-color: rgb(231,80,90);color: white;">未连接</span>
+                                                <span class="details">
+                                                    <span></span> 云AP模式 
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END NOTIFICATION DROPDOWN -->
                         <!-- BEGIN USER LOGIN DROPDOWN -->
                         <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                         <li class="dropdown dropdown-user">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <span class="username username-hide-on-mobile"> Nick </span>
+                            <span class="username username-hide-on-mobile"> admin </span>
                             <!--<i class="fa fa-angle-down"></i>-->
                         </a>
                         </li>
@@ -701,6 +733,15 @@
                 });
             }
         }, 10000);
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        // 云AP和本地AP切换
+        $("#devModeChange").click(function(event) {
+            event.preventDefault();
+            $("#iconHeader").removeClass();
+            $("#iconHeader").addClass("iconfont icon-diannao-copy");
+            $("#iconHeader").next().remove();
+        })
     })
     </script>
 </body>
