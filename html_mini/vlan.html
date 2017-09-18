@@ -14,6 +14,7 @@
     <link href="../assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link rel="stylesheet" href="../assets/global/plugins/bootstrap-table-master/bootstrap-table.min.css" type="text/css">
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
@@ -160,7 +161,64 @@
                                 </ul>
                                 <div class="tab-content" id="tabContentPage">
                                     <div class="tab-pane active" id="tab_0">
-                                        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                                        <!-- BEGIN 基本设置  PORTLET-->
+                                        <div class="portlet box blue ">
+                                            <div class="portlet-title">
+                                                <div class="caption" id="captionTabs_1">
+                                                    <i class="fa fa-cog"></i>基本设置
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="隐藏/显示"> </a>
+                                                </div>
+                                                <div class="actions">
+                                                    <a href="#settingDlg" class="btn btn-default btn-sm" data-toggle="modal">
+                                                    <i class="fa fa-save"></i> 保存 </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body form">
+                                                <!-- BEGIN FORM-->
+                                                <form class="form-horizontal form-bordered form-row-stripped">
+                                                    <div class="form-body">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">终端数限制开关</label>
+                                                            <div class="col-md-6">
+                                                                <input type="checkbox" id="maxConSwitch" name="switchCtl" checked>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">最大终端数</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="允许最多连接终端数量" class="form-control" value="30">
+                                                                <span class="help-block"> 范围[1至60] </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">禁止弱信号开关</label>
+                                                            <div class="col-md-6">
+                                                                <input type="checkbox" id="signalSwitch" name="switchCtl" checked>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">最弱信号设置</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="允许连接的最弱信号强度" class="form-control" value="-75">
+                                                                <span class="help-block"> 范围[-90至-55] </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">最弱信号持续时间</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" placeholder="最弱信号持续的时间（秒）" class="form-control" value="60">
+                                                                <span class="help-block"> 单位：秒。达到以上时间后终端将会掉线。 </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <!-- END FORM-->
+                                            </div>
+                                        </div>
+                                        <!-- END 基本设置 PORTLET-->
+                                        <!-- BEGIN SSID管理 TABLE PORTLET-->
                                         <div class="portlet light portlet-fit portlet-datatable bordered">
                                             <div class="portlet-title">
                                                 <div class="caption">
@@ -177,7 +235,7 @@
                                                 <table id="tableTab0"></table>
                                             </div>
                                         </div>
-                                        <!-- END EXAMPLE TABLE PORTLET-->
+                                        <!-- END SSID管理 TABLE PORTLET-->
                                     </div>
                                     <div class="tab-pane" id="tab_1">
                                         <div class="portlet box blue ">
@@ -187,8 +245,6 @@
                                                 </div>
                                             </div>
                                             <div class="portlet-body form">
-                                                <!-- BEGIN FORM-->
-                                                <!-- END FORM-->
                                             </div>
                                         </div>
                                     </div>
@@ -213,6 +269,25 @@
             </div>
         </div>
     </div>
+    <div class="modal fade in" id="settingDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">基本设置保存</h4>
+                </div>
+                <div class="modal-body">
+                    确认要保存当前的基本设置吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                    </button>
+                    <button type="button" id="saveSetting" class="btn green" data-dismiss="modal" id="setDevParamOk">保存
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
@@ -220,8 +295,60 @@
     <script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/bootstrap-table-master/bootstrap-table.min.js"></script>
     <script src="../assets/global/plugins/bootstrap-table-master/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function() {
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        // 基本设置switch开关（默认关闭）
+        $("[name='switchCtl']").bootstrapSwitch({
+            size: 'mini',
+            state: false,
+        });
+        $("[name='switchCtl']").parent().parent().parent().parent().next().hide();
+        $("#signalSwitch").parent().parent().parent().parent().next().next().hide();
+        $("[name='switchCtl']").bootstrapSwitch('onSwitchChange', function(event, state) {
+            if (state) {
+                // 开
+                if ($(this).attr("id") == "signalSwitch") {
+                    $(this).parent().parent().parent().parent().next().show().next().show();
+                } else {
+                    $(this).parent().parent().parent().parent().next().show();
+                }
+            } else {
+                // 关
+                if ($(this).attr("id") == "signalSwitch") {
+                    $(this).parent().parent().parent().parent().next().hide().next().hide();
+                } else {
+                    $(this).parent().parent().parent().parent().next().hide();
+                }
+            }
+        })
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        // 保存基本设置
+        $("#saveSetting").click(function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            App.blockUI({
+                target: $("#settingDlg"),
+                boxed: true,
+                message: '保存基本设置中...',
+                zIndex: 20000,
+            });
+            window.setTimeout(function() {
+                $("#settingDlg").modal('hide');
+                App.unblockUI('#settingDlg');
+                App.alert({
+                    place: 'append', // append or prepent in container 
+                    type: 'success', // alert's type
+                    message: '基本设置保存成功', // alert's message
+                    close: true, // make alert closable
+                    reset: true, // close all previouse alerts first
+                    focus: true, // auto scroll to the alert after shown
+                    closeInSeconds: '5', // auto close after defined seconds
+                });
+            }, 3000);
+        })
+
         ///////////////////////////////////////////////////////////////////////////////////////////
         // 根据网卡数量显示和隐藏tab页
         var tabs = ["2.4G", "5.8G", "5.8G"];

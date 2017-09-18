@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"max",
+				"maxConSwitch"
+			],
+			[
+				"clou",
+				"cloudAddressContent"
+			],
+			[
+				"wifi",
+				"wifisetting.html"
+			],
+			[
+				"dev",
+				"devModeSel"
+			],
+			[
 				"rem",
 				"remove〔function〕"
 			],
@@ -104,12 +120,12 @@
 	"buffers":
 	[
 		{
-			"file": "html_mini/index.html",
+			"file": "html_mini/vlan.html",
 			"settings":
 			{
-				"buffer_size": 43016,
+				"buffer_size": 30262,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -120,10 +136,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 265.0,
-		"last_filter": "",
+		"height": 392.0,
+		"last_filter": "pack",
 		"selected_items":
 		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -218,20 +238,22 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
-		"/D/Project/web/frameMini2/assets",
-		"/D/Project/web/frameMini2/assets/global",
-		"/D/Project/web/frameMini2/assets/global/plugins",
-		"/D/Project/web/frameMini2/assets/global/plugins/iconfont",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
+		"/D/Project/web/frameMini2/html_mini/vlan.html",
+		"/D/Project/web/frameMini2/html_mini/systemInfo.html",
+		"/D/Project/web/frameMini2/html_mini/index.html",
+		"/D/Project/web/myapp/views/index.ejs",
+		"/D/Project/web/frameMini2/html_mini/login.html",
+		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
+		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
 		"/D/Project/web/frameMini2/server.js",
 		"/D/Project/web/frameMini2/html_mini/networksetting.html",
-		"/D/Project/web/frameMini2/html_mini/vlan.html",
 		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
-		"/D/Project/web/frameMini2/html_mini/systemInfo.html",
 		"/D/Project/web/frameMini2/html_mini/systemReboot.html",
 		"/D/Project/web/frameMini2/html_mini/systemUpdate.html",
 		"/D/Project/web/frameMini2/html_mini/updating.html",
@@ -239,7 +261,6 @@
 		"/D/Project/web/frameMini2/html_mini/bootstrap_table_test.html",
 		"/D/Project/web/frameMini2/html_mini/checkSys.html",
 		"/D/Project/web/frameMini2/html_mini/index - 副本.html",
-		"/D/Project/web/frameMini2/html_mini/index.html",
 		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-blockui.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-alerts-api.js",
@@ -312,10 +333,7 @@
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/JsFormat/JsFormat.sublime-settings",
 		"/D/Project/react/reactNative/appTest/Samples/ActivityIndicatorSample.js",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/D/Project/react/reactNative/appTest/.eslintrc.js",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/PyV8/win64-p3/config.json",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
 		"/D/ProgramFiles/nodejs/node_modules/npm/npmrc",
@@ -351,9 +369,7 @@
 		"/D/React/reactJs/.eslintrc.js",
 		"/D/React/reactJs/src/index.js",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
-		"/D/React/reactJs/src/components/BasicExample.js",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
-		"/D/360云盘/资料文档/01_多倍通工作资料/99_微信小程序_公众号学习_APP_react学习/weui学习.txt"
+		"/D/React/reactJs/src/components/BasicExample.js"
 	],
 	"find":
 	{
@@ -373,6 +389,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"max",
+			"maxConSwitch",
+			"外网设置",
+			"网络设置",
+			"cloudAddressGroup",
+			"已连接",
+			"新增SSID",
+			"devModeSel",
+			"iconHeader",
+			"badge badge-default",
+			"iconHeader",
+			"badge badge-default",
+			"iconHeader",
+			"badge badge-default",
+			"iconHeader",
+			"badge badge-default",
+			"iconHeader",
+			"badge badge-default",
+			"iconHeader",
+			"badge badge-default",
+			"iconHeader",
+			"badge badge-default",
+			"devmode",
+			"badge badge-default",
+			"icon-",
 			"iconfont",
 			"nav navbar-nav pull-right",
 			"wifisetting.html",
@@ -432,19 +473,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html_mini/index.html",
+					"file": "html_mini/vlan.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 43016,
+						"buffer_size": 30262,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								42967,
-								42967
+								20265,
+								20265
 							]
 						],
 						"settings":
@@ -455,7 +496,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 21703.0,
+						"translation.y": 7612.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
