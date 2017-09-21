@@ -428,7 +428,7 @@
         var devMode = Cookies.get('devMode');
         if (devMode && devMode == "cloud") {
             // 云AP模式
-            $("#cloudAddressGroup").show();
+            $("#cloudAddressGroup").hide();
         } else {
             if (typeof(devMode) == "undefined") {
                 // 初始化为本地AP模式

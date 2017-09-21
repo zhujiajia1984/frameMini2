@@ -304,6 +304,7 @@
             size: 'mini',
             state: false,
         });
+        // $("#signalSwitch").bootstrapSwitch('state', true);
         $("[name='switchCtl']").parent().parent().parent().parent().next().hide();
         $("#signalSwitch").parent().parent().parent().parent().next().next().hide();
         $("[name='switchCtl']").bootstrapSwitch('onSwitchChange', function(event, state) {
