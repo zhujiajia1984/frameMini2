@@ -123,18 +123,9 @@
 			"file": "html_mini/vlan.html",
 			"settings":
 			{
-				"buffer_size": 30324,
+				"buffer_size": 30988,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "html_mini/index.html",
-			"settings":
-			{
-				"buffer_size": 47149,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -247,12 +238,16 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
+		"/D/Project/web/frameMini2/assets/global",
+		"/D/Project/web/frameMini2/assets/global/plugins",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
 		"/D/Project/web/frameMini2/html_mini/vlan.html",
 		"/D/Project/web/frameMini2/html_mini/systemInfo.html",
+		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-switch.min.js",
+		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-select.min.js",
 		"/D/Project/web/frameMini2/html_mini/index.html",
 		"/D/Project/web/myapp/views/index.ejs",
 		"/D/Project/web/frameMini2/html_mini/login.html",
@@ -376,9 +371,7 @@
 		"/D/React/reactJs/src/index.html",
 		"/D/React/reactJs/src/npm-debug.log",
 		"/D/React/reactJs/.eslintrc.js",
-		"/D/React/reactJs/src/index.js",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
-		"/D/React/reactJs/src/components/BasicExample.js"
+		"/D/React/reactJs/src/index.js"
 	],
 	"find":
 	{
@@ -399,6 +392,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"datatable",
+			"cookie",
 			"trahs",
 			"switchCtl",
 			"operateEvents",
@@ -492,63 +487,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30324,
+						"buffer_size": 30988,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27221,
-								27231
+								13185,
+								13185
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6769.0,
+						"translation.y": 6914.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html_mini/index.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 47149,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 869.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
