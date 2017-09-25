@@ -127,6 +127,15 @@
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "html_mini/index.html",
+			"settings":
+			{
+				"buffer_size": 47295,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -238,8 +247,6 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
-		"/D/Project/web/frameMini2/assets/global",
-		"/D/Project/web/frameMini2/assets/global/plugins",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
@@ -478,7 +485,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -506,7 +513,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6914.0,
+						"translation.y": 3550.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html_mini/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 47295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19876,
+								19876
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10075.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
