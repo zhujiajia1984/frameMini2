@@ -212,13 +212,6 @@
                                                                 <span class="help-block"> 单位：秒。达到以上时间后终端将会掉线。 </span>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-3">最优距离</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" placeholder="最优距离（米）" class="form-control" value="300">
-                                                                <span class="help-block"> 单位：米。范围[0-500]，0为不限距离 </span>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </form>
                                                 <!-- END FORM-->
@@ -545,6 +538,13 @@
                     return result;
                 }
             }, {
+                field: 'distance',
+                title: '最优距离',
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                sortable: true,
+                visible: false,
+            }, {
                 field: 'operate',
                 title: '操作',
                 align: 'center', // 水平居中
@@ -573,6 +573,7 @@
             pwdSuanfa: 'AES/TKIP混合',
             vlan: '-',
             userIsolate: 'On',
+            distance: '300',
         }, {
             ssid: 'DB25',
             wifiSwitch: 'On',
@@ -587,6 +588,7 @@
             pwdSuanfa: 'AES/TKIP混合',
             vlan: '12',
             userIsolate: 'Off',
+            distance: '300',
         }, {
             ssid: 'DB26',
             wifiSwitch: 'On',
@@ -601,6 +603,7 @@
             pwdSuanfa: 'AES/TKIP混合',
             vlan: '11',
             userIsolate: 'On',
+            distance: '300',
         }];
         $('#tableTab0').bootstrapTable('append', data);
 
