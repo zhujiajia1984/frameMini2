@@ -119,24 +119,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "html_mini/vlan.html",
-			"settings":
-			{
-				"buffer_size": 30988,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "html_mini/index.html",
-			"settings":
-			{
-				"buffer_size": 47295,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -252,10 +234,11 @@
 	"file_history":
 	[
 		"/D/Project/web/frameMini2/html_mini/vlan.html",
+		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
+		"/D/Project/web/frameMini2/html_mini/index.html",
 		"/D/Project/web/frameMini2/html_mini/systemInfo.html",
 		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-switch.min.js",
 		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-select.min.js",
-		"/D/Project/web/frameMini2/html_mini/index.html",
 		"/D/Project/web/myapp/views/index.ejs",
 		"/D/Project/web/frameMini2/html_mini/login.html",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
@@ -272,7 +255,6 @@
 		"/D/Project/web/frameMini2/html_mini/bootstrap_table_test.html",
 		"/D/Project/web/frameMini2/html_mini/checkSys.html",
 		"/D/Project/web/frameMini2/html_mini/index - 副本.html",
-		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-blockui.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-alerts-api.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js",
@@ -399,6 +381,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"vlan",
+			"switchCtl",
+			"cutstr",
 			"datatable",
 			"cookie",
 			"trahs",
@@ -485,71 +470,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "html_mini/vlan.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 30988,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13185,
-								13185
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3550.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html_mini/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 47295,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								19876,
-								19876
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10075.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
