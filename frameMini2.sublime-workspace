@@ -120,19 +120,10 @@
 	"buffers":
 	[
 		{
-			"file": "html_mini/wifisetting.html",
-			"settings":
-			{
-				"buffer_size": 81772,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "html_mini/vlan.html",
 			"settings":
 			{
-				"buffer_size": 33935,
+				"buffer_size": 33967,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -246,7 +237,8 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Project/web/frameMini2"
+		"/D/Project/web/frameMini2",
+		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
@@ -398,6 +390,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"navTabs",
+			"2.4G",
 			"最优距离",
 			"最优",
 			"vlan",
@@ -489,66 +483,34 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "html_mini/wifisetting.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 81772,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32677,
-								32677
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 18535.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "html_mini/vlan.html",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 33935,
+						"buffer_size": 33967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								30858,
-								30858
+								7944,
+								7944
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 18079.0,
+						"translation.y": 4449.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
