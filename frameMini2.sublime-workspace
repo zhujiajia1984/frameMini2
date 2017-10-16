@@ -120,12 +120,12 @@
 	"buffers":
 	[
 		{
-			"file": "html_mini/vlan.html",
+			"file": "html_mini/index.html",
 			"settings":
 			{
-				"buffer_size": 33967,
+				"buffer_size": 47301,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -373,7 +373,7 @@
 	],
 	"find":
 	{
-		"height": 45.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -390,6 +390,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"已连接终端",
 			"navTabs",
 			"2.4G",
 			"最优距离",
@@ -477,7 +478,7 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
@@ -488,29 +489,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html_mini/vlan.html",
-					"semi_transient": true,
+					"file": "html_mini/index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 33967,
+						"buffer_size": 47301,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7944,
-								7944
+								15988,
+								15988
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4449.0,
+						"translation.y": 8110.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
