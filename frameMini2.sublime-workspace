@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cloud",
+				"cloudMode"
+			],
+			[
 				"max",
 				"maxConSwitch"
 			],
@@ -242,9 +246,10 @@
 	],
 	"file_history":
 	[
+		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
+		"/D/Project/web/frameMini2/html_mini/index.html",
 		"/D/Project/web/frameMini2/html_mini/vlan.html",
 		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
-		"/D/Project/web/frameMini2/html_mini/index.html",
 		"/D/Project/web/frameMini2/html_mini/systemInfo.html",
 		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-switch.min.js",
 		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-select.min.js",
@@ -256,7 +261,6 @@
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
 		"/D/Project/web/frameMini2/server.js",
 		"/D/Project/web/frameMini2/html_mini/networksetting.html",
-		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
 		"/D/Project/web/frameMini2/html_mini/systemReboot.html",
 		"/D/Project/web/frameMini2/html_mini/systemUpdate.html",
 		"/D/Project/web/frameMini2/html_mini/updating.html",
@@ -373,7 +377,7 @@
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 50.0
 	},
 	"find_in_files":
 	{
@@ -390,6 +394,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"apmode",
+			"cookie",
+			"apMode",
+			"modeExplain",
+			"apMode",
+			"AP模式",
+			"routerMode",
+			"modeSelectAll",
 			"已连接终端",
 			"navTabs",
 			"2.4G",
@@ -490,7 +502,7 @@
 				{
 					"buffer": 0,
 					"file": "html_mini/index.html",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 47301,
@@ -500,19 +512,20 @@
 						"selection":
 						[
 							[
-								15988,
-								15988
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8110.0,
+						"translation.y": 555.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

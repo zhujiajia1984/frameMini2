@@ -221,9 +221,9 @@
                                                                                     <label class="btn btn-transparent red btn-outline btn-circle btn-sm active">
                                                                                         <input type="radio" name="modeSelectAll" class="toggle" id="routerMode" checked="true">路由模式</label>
                                                                                     <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
-                                                                                        <input type="radio" name="modeSelectAll" class="toggle" id="apMode">透明桥模式</label>
+                                                                                        <input type="radio" name="modeSelectAll" class="toggle" id="apMode">AP模式</label>
                                                                                     <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
-                                                                                        <input type="radio" name="modeSelectAll" class="toggle" id="cloudMode">AP模式</label>
+                                                                                        <input type="radio" name="modeSelectAll" class="toggle" id="cloudMode">客户端模式</label>
                                                                                 </div>
                                                                                 <span class="help-block" id="modeExplain"> 路由模式：通过WAN口接入Internet，功能与无线路由器功能相同。 </span>
                                                                             </div>
@@ -262,7 +262,7 @@
                                                                                                 <span class="fa fa-check check-mark"></span>
                                                                                             </a>
                                                                                             </li>
-                                                                                            <li data-original-index="1">
+                                                                                            <li data-original-index="1" id="pppoeSel">
                                                                                                 <a tabindex="0" class="" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
                                                                                                 <span class="text">PPPOE拨号</span>
                                                                                                 <span class="fa fa-check check-mark"></span>
@@ -412,7 +412,7 @@
                 // 初始化为本地AP模式
                 Cookies.set('devMode', 'local');
             }
-            // 本地模式，隐藏AP模式
+            // 本地模式，隐藏客户端模式
             $('#devModeSel').val("local");
             $("#cloudMode").parent().hide();
         }
@@ -424,10 +424,10 @@
                     $("#modeExplain").text("路由模式：通过WAN口接入Internet，功能与无线路由器功能相同。");
                     break;
                 case "apMode":
-                    $("#modeExplain").text("透明桥模式：无DHCP分配，将有线信号转变成无线wifi信号，扩大WiFi信号覆盖范围");
+                    $("#modeExplain").text("AP模式：透明桥，无DHCP分配，将有线信号转变成无线wifi信号，扩大WiFi信号覆盖范围");
                     break;
                 case "cloudMode":
-                    $("#modeExplain").text("AP模式：DHCP客户端模式，自身需要有IP地址，可云端控制");
+                    $("#modeExplain").text("客户端模式：DHCP客户端，自身需要有IP地址，可云端控制");
                     break;
                 default:
                     break;
@@ -467,8 +467,9 @@
                         $("div[name=apModeContent]").show();
                         break;
                     case "cloudMode":
-                        $("div[name=routerModeContent]").hide();
-                        $("div[name=apModeContent]").show();
+                        $("div[name=routerModeContent]").show();
+                        $("div[name=apModeContent]").hide();
+                        $("#pppoeSel").hide();
                         break;
                     default:
                         break;
