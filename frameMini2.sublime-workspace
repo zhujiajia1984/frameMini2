@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"my",
+				"myChart1"
+			],
+			[
+				"has",
+				"hasClass〔function〕"
+			],
+			[
+				"add",
+				"addClass〔function〕"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
 				"cloud",
 				"cloudMode"
 			],
@@ -46,10 +66,6 @@
 			[
 				"vl",
 				"vlan.html"
-			],
-			[
-				"add",
-				"addSSID"
 			],
 			[
 				"margin",
@@ -124,12 +140,21 @@
 	"buffers":
 	[
 		{
-			"file": "html_mini/index.html",
+			"file": "html_mini/vlan.html",
 			"settings":
 			{
-				"buffer_size": 47301,
+				"buffer_size": 33436,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html_mini/scanWifi.html",
+			"settings":
+			{
+				"buffer_size": 13351,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -242,13 +267,20 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
+		"/D/Project/web/frameMini2/assets",
+		"/D/Project/web/frameMini2/assets/global",
+		"/D/Project/web/frameMini2/assets/global/plugins",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
-		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
-		"/D/Project/web/frameMini2/html_mini/index.html",
 		"/D/Project/web/frameMini2/html_mini/vlan.html",
+		"/D/Project/web/frameMini2/html_mini/scanWifi.html",
+		"/D/Project/web/frameMini2/html_mini/index.html",
+		"/D/Project/web/frameMini2/assets/global/plugins/iconfont/iconfont.css",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/layouts/global/scripts/quick-nav.js",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
+		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
 		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
 		"/D/Project/web/frameMini2/html_mini/systemInfo.html",
 		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-switch.min.js",
@@ -257,7 +289,6 @@
 		"/D/Project/web/frameMini2/html_mini/login.html",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
-		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
 		"/D/Project/web/frameMini2/server.js",
 		"/D/Project/web/frameMini2/html_mini/networksetting.html",
@@ -370,20 +401,18 @@
 		"/D/React/reactJs/src/components/about.js",
 		"/D/React/reactJs/src/components/home.js",
 		"/D/React/reactJs/src/components/Home.js",
-		"/D/React/reactJs/src/index.html",
-		"/D/React/reactJs/src/npm-debug.log",
-		"/D/React/reactJs/.eslintrc.js",
-		"/D/React/reactJs/src/index.js"
+		"/D/React/reactJs/src/index.html"
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 53.0
 	},
 	"find_in_files":
 	{
 		"height": 105.0,
 		"where_history":
 		[
+			"D:\\Project\\web\\frameMini2\\html_mini",
 			"D:\\Project\\web\\frameMini2",
 			"D:\\Project\\web\\frameMini2\\html_mini",
 			"D:\\Project\\react\\reactNative\\myapp"
@@ -394,6 +423,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"setChart1",
+			"自动扫描",
+			"autoSearch",
+			"state",
+			"switchCtl",
+			"maxConSwitch",
+			"cookie",
+			"scanWifi",
+			"工具",
+			"vlan.html",
+			"getUrlParam",
+			"window.location",
+			"工具",
+			"保存",
+			"nav",
+			"navTabs",
+			"tab_0",
+			"liTab_0",
+			"tab_0",
+			"apModeContent",
+			"透明桥",
 			"apmode",
 			"cookie",
 			"apMode",
@@ -496,36 +546,66 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "html_mini/index.html",
-					"semi_transient": true,
+					"file": "html_mini/vlan.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 47301,
+						"buffer_size": 33436,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								10569,
+								10569
 							]
 						],
 						"settings":
 						{
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 555.0,
+						"translation.y": 7955.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html_mini/scanWifi.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12892,
+								12892
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9223.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

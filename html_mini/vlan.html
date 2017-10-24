@@ -6,6 +6,7 @@
     <title>管理平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="../assets/global/plugins/iconfont/iconfont.css" type="text/css">
     <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -148,16 +149,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="tabbable-line boxless tabbable-reversed">
-                                <ul class="nav nav-tabs" id="navTabs">
-                                    <li class="active" id="liTab_0">
-                                        <a href="tab_0" data-toggle="tab" aria-expanded="true">0</a>
-                                    </li>
-                                    <li class="" id="liTab_1">
-                                        <a href="tab_1" data-toggle="tab" aria-expanded="false">1</a>
-                                    </li>
-                                    <li class="" id="liTab_2">
-                                        <a href="tab_2" data-toggle="tab" aria-expanded="false">2</a>
-                                    </li>
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab_0" data-toggle="tab">2.4G</a></li>
+                                    <li><a href="#tab_1" data-toggle="tab">5.8G</a></li>
                                 </ul>
                                 <div class="tab-content" id="tabContentPage">
                                     <div class="tab-pane active" id="tab_0">
@@ -171,7 +165,7 @@
                                                     <a href="javascript:;" class="collapse" data-original-title="" title="隐藏/显示"> </a>
                                                 </div>
                                                 <div class="actions">
-                                                    <a href="#settingDlg" class="btn btn-default btn-sm" data-toggle="modal">
+                                                    <a href="#settingDlg" class="btn btn-default btn-sm" data-toggle="modal" style="margin-right: 30px;">
                                                     <i class="fa fa-save"></i> 保存 </a>
                                                 </div>
                                             </div>
@@ -288,17 +282,42 @@
             </div>
         </div>
     </div>
+    <!-- BEGIN QUICK NAV -->
+    <nav class="quick-nav">
+        <a class="quick-nav-trigger">
+            <span aria-hidden="true"></span>
+        </a>
+        <ul>
+            <li>
+                <a id="scanWifi"><span>无线扫描工具</span>
+                <i class="iconfont icon-leida" style="font-size: 18px;"></i>
+                </a>
+            </li>
+        </ul>
+        <span aria-hidden="true" class="quick-nav-bg"></span>
+    </nav>
+    <div class="quick-nav-overlay"></div>
+    <!-- END QUICK NAV -->
     <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
     <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
     <script src="../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/bootstrap-table-master/bootstrap-table.min.js"></script>
     <script src="../assets/global/plugins/bootstrap-table-master/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        ///////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////
+        // 扫描周边wifi
+        $("#scanWifi").click(function(e) {
+            var radio = '2.4G';
+            var url = "./scanWifi.html?radio=" + radio;
+            window.open(url);
+        })
+        ///////////////////////////////////////////////////////////////////////////
         // 基本设置switch开关（默认关闭）
         $("[name='switchCtl']").bootstrapSwitch({
             size: 'mini',
@@ -349,35 +368,6 @@
                 });
             }, 3000);
         })
-
-        ///////////////////////////////////////////////////////////////////////////////////////////
-        // 根据网卡数量显示和隐藏tab页
-        var tabs = ["2.4G", "5.8G", "5.8G"];
-        $("#navTabs").children().hide();
-        $("#tabContentPage").children().hide();
-        for (var i = 0; i < tabs.length; i++) {
-            // 显示需要的tab标题
-            var liTabId = "liTab_" + i;
-            var $li = $("#" + liTabId);
-            $li.children().text(tabs[i]);
-            $li.show();
-        }
-        // 显示默认tab
-        $("#tab_0").show();
-        ///////////////////////////////////////////////////////////////////////////////////////////
-        // 点击tab表头切换页面
-        $("a[data-toggle = tab]").click(function(e) {
-            e.stopPropagation(); // 阻止冒泡
-            e.preventDefault(); // 阻止默认事件
-            $("#navTabs").children().removeClass("active"); // 清空选中
-            $(this).parent().addClass("active"); // 选中表头
-            $("#tabContentPage").children().removeClass("active")
-                .hide(); // 清空内容并隐藏所有tab页
-            var $id = $(this).attr("href");
-            $("#" + $id).addClass("active")
-                .show(); // 激活内容并显示当前tab页
-        })
-
         ////////////////////////////////////////////////////////////////////////////////////////////////
         // 初始化表格
         $('#tableTab0').bootstrapTable({

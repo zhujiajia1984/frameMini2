@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>管理平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="../assets/global/plugins/iconfont/iconfont.css" type="text/css">
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link rel="stylesheet" href="../assets/global/plugins/bootstrap-table-master/bootstrap-table.min.css" type="text/css">
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/ladda/ladda-themeless.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-sweetalert/sweetalert.css" type="text/css" rel="stylesheet">
+</head>
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
+    <div class="page-wrapper">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="javascript:;">
+                    <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" width="87" height="14"/> </a>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content" style="margin-left: 0px; ">
+                    <div class="page-bar">
+                    </div>
+                    <h1 class="page-title">无线扫描工具
+                        <small>可扫描周边的无线设备信息</small>
+                    </h1>
+                    <!-- <div class="note note-danger">
+                        <h4 class="block">使用注意事项：</h4>
+                        <p>扫描时将会导致当前已连接WiFi的终端暂时断开！关闭页面后停止扫描。自动扫描只支持通过有线连接设备的场合，并将会导致其他终端无法连接无线WiFi。</p>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tabbable-line boxless tabbable-reversed">
+                                <ul class="nav nav-tabs" id="myTab">
+                                    <li>
+                                        <a href="#tab1" data-toggle="tab" id="flag_tab1">2.4G</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab2" data-toggle="tab" id="flag_tab2">5.8G</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="tab1">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="portlet light">
+                                                    <div class="portlet-title">
+                                                        <div class="caption">
+                                                            <form class="form-inline">
+                                                                <div class="form-group">
+                                                                    <span class="caption-subject bold uppercase font-dark">扫描模式：</span>
+                                                                </div>
+                                                                <div class="form-group" style="margin-right: 10px;">
+                                                                    <label class="control-label" style="font-size: 14px;">自动扫描</label>
+                                                                    <input type="checkbox" id="autoSearch" checked>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div style="display:inline;width:1px; border-left:1px #BFCAD1 solid;margin-right: 8px;"></div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <button type="button" id="btnSearch" class="btn btn-primary mt-ladda-btn ladda-button btn-circle blue" data-style="zoom-in">
+                                                                        <span class="ladda-label"><i class="icon-magnifier" style="margin-right: 5px;"></i>手动扫描</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portlet-body">
+                                                        <div id="echarts_channel" style="height:500px;margin-bottom: 20px;"></div>
+                                                        <table id="mytable"></table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        tab2
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/global/plugins/jquery.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="../assets/global/scripts/app.min.js " type="text/javascript "></script>
+    <script src="../assets/layouts/layout/scripts/layout.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/jquery.blockui.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/bootstrap-table-master/bootstrap-table.min.js "></script>
+    <script src="../assets/global/plugins/bootstrap-table-master/locale/bootstrap-table-zh-CN.min.js "></script>
+    <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/ladda/spin.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/ladda/ladda.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/echarts/echarts.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/echarts/theme/shine.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        window.interval_id = 0;
+        // 获取参数
+        var radio = getUrlParam("radio");
+        switch (radio) {
+            case "2.4G":
+                $("#myTab li:eq(0) a").tab("show");
+                break;
+            case "5.8G":
+                $("#myTab li:eq(1) a").tab("show");
+                break;
+            default:
+                $("#myTab li:eq(0) a").tab("show");
+                // 隐藏5.8G的tab页
+                $("#myTab li:eq(1)").hide();
+                $("#tab2").hide();
+                break;
+        }
+
+        // 页面关闭后取消自动扫描脚本
+        window.onunload = function() {
+            if (window.interval_id) {
+                window.clearInterval(window.interval_id);
+                window.interval_id = 0;
+            }
+        };
+
+        // 新建图表
+        var myChart1 = echarts.init(document.getElementById('echarts_channel'), 'shine');
+
+        // 激活图表
+        $('#flag_tab1').on('shown.bs.tab', function(e) {
+            myChart1.resize();
+        })
+        $('#flag_tab2').on('shown.bs.tab', function(e) {
+            myChart1.resize();
+        })
+
+        // 点击手动扫描按钮
+        $("#btnSearch").click(function(e) {
+            e.preventDefault();
+            if ($(this).hasClass("disabled")) { return false; }
+            $("#autoSearch").bootstrapSwitch('disabled', true);
+            var btn = Ladda.create(this);
+            btn.start();
+            myChart1.clear();
+            myChart1.showLoading();
+            window.setTimeout(function() {
+                $("#autoSearch").bootstrapSwitch('disabled', false);
+                setChart1(myChart1);
+                myChart1.resize();
+                btn.stop();
+                myChart1.hideLoading();
+            }, 500)
+        })
+
+        // 自动扫描开关初始化（默认关闭）
+        $("#autoSearch").bootstrapSwitch({
+            size: 'small',
+            state: false,
+            onColor: 'success',
+            offColor: 'danger',
+            onText: '启动',
+            offText: '停止',
+            onSwitchChange: function(event, state) {
+                if (state == true) {
+                    // 打开时警告
+                    swal({
+                        title: "请先确认以下事项：",
+                        text: "必须通过有线连接到此设备,确认后无线将暂时无法使用",
+                        type: "warning",
+                        showConfirmButton: true,
+                        confirmButtonClass: "btn-danger",
+                        confirmButtonText: "我已确认，启动自动扫描",
+                        cancelButtonText: "暂不启用自动扫描",
+                        showCancelButton: true,
+                        closeOnConfirm: true
+                    }, function(isConfirm) {
+                        if (isConfirm) {
+                            // 开始自动扫描
+                            $("#btnSearch").addClass("disabled");
+                            myChart1.clear();
+                            myChart1.showLoading();
+                            window.setTimeout(function() {
+                                setChart1(myChart1);
+                                myChart1.resize();
+                                myChart1.hideLoading();
+                                window.interval_id = window.setInterval(function() {
+                                    myChart1.setOption({
+                                        series: [{
+                                            data: [{
+                                                coords: [
+                                                    [0, 20],
+                                                    [2, ((0 - RandomNumBoth(40, 80)) + 120)],
+                                                    [4, 20]
+                                                ]
+                                            }],
+                                        }, {
+                                            data: [{
+                                                coords: [
+                                                    [2, 20],
+                                                    [4, ((0 - RandomNumBoth(30, 90)) + 120)],
+                                                    [6, 20]
+                                                ]
+                                            }],
+                                        }]
+                                    })
+                                }, 1000)
+                            }, 500)
+                        } else {
+                            $("#autoSearch").bootstrapSwitch('state', false);
+                        }
+                    })
+                } else {
+                    $("#btnSearch").removeClass("disabled");
+                    if (window.interval_id) {
+                        window.clearInterval(window.interval_id);
+                        window.interval_id = 0;
+                    }
+                }
+            }
+        });
+
+        // 自适应窗体尺寸
+        window.onresize = function() {
+            myChart1.resize();
+        };
+    })
+    // 获取url参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+    ////////////////////////////////////////////////////////////////////////
+    // 切换为柱状图
+    function setChart1(myChart1) {
+        myChart1.setOption({
+            legend: {
+                left: 'center',
+                top: 0,
+                data: ['channel'],
+            },
+            xAxis: {
+                type: 'category',
+                name: '信道（AP数）',
+                boundaryGap: false,
+                data: ["-", "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "-", "-"],
+            },
+            yAxis: {
+                type: 'value',
+                name: '信号强度',
+                boundaryGap: false,
+                min: 20,
+                max: 100,
+                inverse: false,
+                minInterval: 1,
+                maxInterval: 10,
+                axisLine: {
+                    show: false,
+                },
+                axisTick: {
+                    show: false,
+                },
+                axisLabel: {
+                    formatter: function(value, index) {
+                        return (value - 120);
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: "#E1E5EC",
+                        type: 'dashed',
+                    }
+                }
+            },
+            series: [{
+                type: 'lines',
+                name: 'ssid1',
+                coordinateSystem: 'cartesian2d',
+                polyline: true,
+                data: [{
+                    coords: [
+                        [0, 20], // 起点
+                        [2, (-67 + 120)],
+                        [4, 20]
+                    ]
+                }],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.3, //弧度0-1
+                        color: "#3598DC",
+                        width: 3,
+                    }
+                },
+                effect: {
+                    // constantSpeed: 20,
+                    show: true,
+                    // trailLength: 0.1,
+                    // symbolSize: 1.5
+                },
+            }, {
+                type: 'lines',
+                name: 'ssid2',
+                coordinateSystem: 'cartesian2d',
+                polyline: true,
+                data: [{
+                    coords: [
+                        [2, 20], // 起点
+                        [4, (-30 + 120)],
+                        [6, 20]
+                    ]
+                }],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.3, //弧度0-1
+                        color: "#32C5D2",
+                        width: 3,
+                    }
+                }
+            }, ]
+        });
+    }
+    // 生成范围随机数
+    function RandomNumBoth(Min, Max) {
+        var Range = Max - Min;
+        var Rand = Math.random();
+        var num = Min + Math.round(Rand * Range); //四舍五入
+        return num;
+    }
+    </script>
+</body>
+
+</html>
