@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cl",
+				"clearInterval〔function〕"
+			],
+			[
 				"my",
 				"myChart1"
 			],
@@ -152,7 +156,7 @@
 			"file": "html_mini/scanWifi.html",
 			"settings":
 			{
-				"buffer_size": 13351,
+				"buffer_size": 16368,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -267,7 +271,6 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
-		"/D/Project/web/frameMini2/assets",
 		"/D/Project/web/frameMini2/assets/global",
 		"/D/Project/web/frameMini2/assets/global/plugins",
 		"/D/Project/web/frameMini2/html_mini"
@@ -562,8 +565,8 @@
 						"selection":
 						[
 							[
-								10569,
-								10569
+								27312,
+								27316
 							]
 						],
 						"settings":
@@ -573,7 +576,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7955.0,
+						"translation.y": 22377.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -585,15 +588,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13351,
+						"buffer_size": 16368,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12892,
-								12892
+								8967,
+								8967
 							]
 						],
 						"settings":
@@ -605,7 +608,7 @@
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9223.0,
+						"translation.y": 9678.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

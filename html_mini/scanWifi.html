@@ -115,6 +115,14 @@
     <script src="../assets/global/plugins/echarts/echarts.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/echarts/theme/shine.js" type="text/javascript"></script>
     <script type="text/javascript">
+    var data = [10, 2, 0, 3, 1, 8, 2, 1, 2, 3, 7, 1, 6];
+    var detail = [];
+    for (var i = 0; i < data.length; i++) {
+        detail.push({
+            ssid: RandomNumBoth(200, 900).toString(),
+            mac: 'abc' + RandomNumBoth(200, 900),
+        })
+    }
     $(document).ready(function() {
         window.interval_id = 0;
         // 获取参数
@@ -162,12 +170,15 @@
             btn.start();
             myChart1.clear();
             myChart1.showLoading();
+            $('#mytable').bootstrapTable('showLoading');
             window.setTimeout(function() {
                 $("#autoSearch").bootstrapSwitch('disabled', false);
                 setChart1(myChart1);
+                setListData();
                 myChart1.resize();
                 btn.stop();
                 myChart1.hideLoading();
+                $('#mytable').bootstrapTable('hideLoading');
             }, 500)
         })
 
@@ -198,30 +209,23 @@
                             $("#btnSearch").addClass("disabled");
                             myChart1.clear();
                             myChart1.showLoading();
+                            $('#mytable').bootstrapTable('showLoading');
                             window.setTimeout(function() {
                                 setChart1(myChart1);
                                 myChart1.resize();
                                 myChart1.hideLoading();
+                                $('#mytable').bootstrapTable('hideLoading');
                                 window.interval_id = window.setInterval(function() {
+                                    data = [];
+                                    for (var i = 0; i < 13; i++) {
+                                        data.push(RandomNumBoth(0, 10));
+                                    }
                                     myChart1.setOption({
                                         series: [{
-                                            data: [{
-                                                coords: [
-                                                    [0, 20],
-                                                    [2, ((0 - RandomNumBoth(40, 80)) + 120)],
-                                                    [4, 20]
-                                                ]
-                                            }],
-                                        }, {
-                                            data: [{
-                                                coords: [
-                                                    [2, 20],
-                                                    [4, ((0 - RandomNumBoth(30, 90)) + 120)],
-                                                    [6, 20]
-                                                ]
-                                            }],
+                                            data: data
                                         }]
                                     })
+                                    setListData();
                                 }, 1000)
                             }, 500)
                         } else {
@@ -242,6 +246,69 @@
         window.onresize = function() {
             myChart1.resize();
         };
+
+        // 初始化表格
+        $('#mytable').bootstrapTable({
+            search: true,
+            searchAlign: 'left',
+            sortName: 'ssid', // 初始化排序字段 
+            pagination: true, // 底部显示数量,
+            pageNumber: 1, //初始化加载第一页，默认第一页
+            pageSize: 10, //每页的记录行数
+            pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
+            striped: true,
+            showColumns: true,
+            columns: [{ // 表头
+                field: 'ssid',
+                title: 'ssid名称',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'mac',
+                title: 'mac地址',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'channel',
+                title: '信道',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'signal',
+                title: '信号强度',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'quality',
+                title: '信号质量',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'devMode',
+                title: '设备模式',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'pwdMode',
+                title: '加密方式',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: false,
+            }],
+        });
     })
     // 获取url参数
     function getUrlParam(name) {
@@ -251,93 +318,115 @@
         return null; //返回参数值
     }
     ////////////////////////////////////////////////////////////////////////
-    // 切换为柱状图
+    // 柱状图
     function setChart1(myChart1) {
         myChart1.setOption({
-            legend: {
+            title: {
+                text: '无线信道状态表',
                 left: 'center',
-                top: 0,
-                data: ['channel'],
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow', // line/shadow/cross
+                },
+                formatter: function(params) {
+                    return params[0].name + '<br/>' + 'ssid：' + detail[params[0].dataIndex].ssid + '<br/>' + 'ssid：' + detail[params[0].dataIndex].ssid;
+                }
             },
             xAxis: {
                 type: 'category',
-                name: '信道（AP数）',
-                boundaryGap: false,
-                data: ["-", "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "-", "-"],
+                name: '信道（状态）',
+                boundaryGap: true,
+                axisLabel: {
+                    formatter: function(value, index) {
+                        if (data[index] == 0) {
+                            return '{free|' + value + '(空闲)' + '}';
+                        } else {
+                            return value;
+                        }
+                    },
+                    rich: {
+                        free: {
+                            align: 'left',
+                            color: 'green'
+                        }
+                    }
+                },
+                data: ["信道1", "信道2", "信道3", "信道4", "信道5", "信道6", "信道7", "信道8", "信道9", "信道10", "信道11", "信道12", "信道13"],
             },
             yAxis: {
                 type: 'value',
-                name: '信号强度',
-                boundaryGap: false,
-                min: 20,
-                max: 100,
-                inverse: false,
-                minInterval: 1,
-                maxInterval: 10,
-                axisLine: {
-                    show: false,
-                },
-                axisTick: {
-                    show: false,
+                name: 'SSID数量',
+                boundaryGap: ['0', '20%'],
+                splitLine: {
+                    show: false
                 },
                 axisLabel: {
-                    formatter: function(value, index) {
-                        return (value - 120);
-                    }
+                    showMinLabel: false,
                 },
-                splitLine: {
-                    lineStyle: {
-                        color: "#E1E5EC",
-                        type: 'dashed',
-                    }
-                }
             },
             series: [{
-                type: 'lines',
-                name: 'ssid1',
-                coordinateSystem: 'cartesian2d',
-                polyline: true,
-                data: [{
-                    coords: [
-                        [0, 20], // 起点
-                        [2, (-67 + 120)],
-                        [4, 20]
-                    ]
-                }],
-                lineStyle: {
+                type: 'bar',
+                name: 'SSID数量',
+                data: data,
+                barWidth: '50%',
+                itemStyle: {
                     normal: {
-                        curveness: 0.3, //弧度0-1
-                        color: "#3598DC",
-                        width: 3,
+                        color: function(params) {
+                            if (params.data < 3) {
+                                return "#32C5D2";
+                            } else if (params.data < 6) {
+                                return "#F3C200";
+                            } else {
+                                return "#E7505A";
+                            }
+                        }
                     }
                 },
-                effect: {
-                    // constantSpeed: 20,
-                    show: true,
-                    // trailLength: 0.1,
-                    // symbolSize: 1.5
-                },
-            }, {
-                type: 'lines',
-                name: 'ssid2',
-                coordinateSystem: 'cartesian2d',
-                polyline: true,
-                data: [{
-                    coords: [
-                        [2, 20], // 起点
-                        [4, (-30 + 120)],
-                        [6, 20]
-                    ]
-                }],
-                lineStyle: {
+                label: {
                     normal: {
-                        curveness: 0.3, //弧度0-1
-                        color: "#32C5D2",
-                        width: 3,
+                        show: true,
+                        position: 'top',
+                        formatter: function(params) {
+                            if (params.data == 0) {
+                                return '{free|' + '}';
+                            } else {
+                                return params.data;
+                            }
+                        },
+                        rich: {
+                            free: {
+                                color: 'green',
+                                backgroundColor: {
+                                    image: '../assets/global/img/free.png'
+                                },
+                                height: 40
+                            },
+                        }
                     }
-                }
+                },
             }, ]
         });
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // 表格数据生成
+    function setListData() {
+        var listData = [];
+        for (var i = 0; i < RandomNumBoth(10, 100); i++) {
+            listData.push({
+                ssid: '测试' + RandomNumBoth(1, 100),
+                mac: 'ef:34:tH:ua:' + RandomNumBoth(10, 99) + ':' + RandomNumBoth(10, 99),
+                channel: '信道' + RandomNumBoth(1, 13),
+                signal: (0 - RandomNumBoth(20, 95)).toString(),
+                quality: RandomNumBoth(10, 95) + '%',
+                devMode: 'master' + RandomNumBoth(1, 9),
+                pwdMode: 'WPA2' + RandomNumBoth(1, 9)
+            });
+        }
+        $('#mytable').bootstrapTable('removeAll');
+        $('#mytable').bootstrapTable('append', listData);
     }
     // 生成范围随机数
     function RandomNumBoth(Min, Max) {
@@ -346,6 +435,90 @@
         var num = Min + Math.round(Rand * Range); //四舍五入
         return num;
     }
+    // function setlinesChart1(myChart1) {
+    //     myChart1.setOption({
+    //         legend: {
+    //             left: 'center',
+    //             top: 0,
+    //             data: ['channel'],
+    //         },
+    //         xAxis: {
+    //             type: 'category',
+    //             name: '信道（AP数）',
+    //             boundaryGap: false,
+    //             data: ["-", "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "-", "-"],
+    //         },
+    //         yAxis: {
+    //             type: 'value',
+    //             name: '信号强度',
+    //             boundaryGap: false,
+    //             min: 20,
+    //             max: 100,
+    //             inverse: false,
+    //             minInterval: 1,
+    //             maxInterval: 10,
+    //             axisLine: {
+    //                 show: false,
+    //             },
+    //             axisTick: {
+    //                 show: false,
+    //             },
+    //             axisLabel: {
+    //                 formatter: function(value, index) {
+    //                     return (value - 120);
+    //                 }
+    //             },
+    //             splitLine: {
+    //                 lineStyle: {
+    //                     color: "#E1E5EC",
+    //                     type: 'dashed',
+    //                 }
+    //             }
+    //         },
+    //         series: [{
+    //             type: 'lines',
+    //             name: 'ssid1',
+    //             coordinateSystem: 'cartesian2d',
+    //             polyline: true,
+    //             data: [{
+    //                 coords: [
+    //                     [0, 20], // 起点
+    //                     [2, (-67 + 120)],
+    //                     [4, 20]
+    //                 ]
+    //             }],
+    //             lineStyle: {
+    //                 normal: {
+    //                     curveness: 0.3, //弧度0-1
+    //                     color: "#3598DC",
+    //                     width: 3,
+    //                 }
+    //             },
+    //             effect: {
+    //                 show: true,
+    //             },
+    //         }, {
+    //             type: 'lines',
+    //             name: 'ssid2',
+    //             coordinateSystem: 'cartesian2d',
+    //             polyline: true,
+    //             data: [{
+    //                 coords: [
+    //                     [2, 20], // 起点
+    //                     [4, (-30 + 120)],
+    //                     [6, 20]
+    //                 ]
+    //             }],
+    //             lineStyle: {
+    //                 normal: {
+    //                     curveness: 0.3, //弧度0-1
+    //                     color: "#32C5D2",
+    //                     width: 3,
+    //                 }
+    //             }
+    //         }, ]
+    //     });
+    // }
     </script>
 </body>
 
