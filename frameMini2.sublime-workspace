@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"back",
+				"background-color"
+			],
+			[
+				"set",
+				"setScatterChart1"
+			],
+			[
+				"hide",
+				"hideLoading"
+			],
+			[
+				"myT",
+				"mytable"
+			],
+			[
 				"cl",
 				"clearInterval〔function〕"
 			],
@@ -54,10 +70,6 @@
 			[
 				"remv",
 				"removeClass〔function〕"
-			],
-			[
-				"back",
-				"background-color"
 			],
 			[
 				"label",
@@ -144,19 +156,19 @@
 	"buffers":
 	[
 		{
-			"file": "html_mini/vlan.html",
+			"file": "html_mini/scanWifi.html",
 			"settings":
 			{
-				"buffer_size": 33436,
+				"buffer_size": 29039,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "html_mini/scanWifi.html",
+			"file": "html_mini/quickConfig.html",
 			"settings":
 			{
-				"buffer_size": 16368,
+				"buffer_size": 39690,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -271,8 +283,6 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
-		"/D/Project/web/frameMini2/assets/global",
-		"/D/Project/web/frameMini2/assets/global/plugins",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
@@ -426,6 +436,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"switch",
+			"信号强度",
+			"yAxis",
+			"change",
+			"停止",
+			"options",
+			"change",
+			"data",
+			"dat",
+			"data",
+			"free.png",
 			"setChart1",
 			"自动扫描",
 			"autoSearch",
@@ -549,24 +570,58 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "html_mini/vlan.html",
+					"file": "html_mini/scanWifi.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 33436,
+						"buffer_size": 29039,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27312,
-								27316
+								18219,
+								18219
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 18817.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html_mini/quickConfig.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 39690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33290,
+								33290
 							]
 						],
 						"settings":
@@ -576,42 +631,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 22377.0,
+						"translation.y": 127983.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html_mini/scanWifi.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16368,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8967,
-								8967
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 9678.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
