@@ -80,6 +80,14 @@
                                                                 </div>
                                                             </form>
                                                         </div>
+                                                        <div class="actions">
+                                                            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                                                <label class="btn btn-transparent blue-oleo btn-no-border btn-outline  btn-sm active">
+                                                                    <input type="radio" name="chartType" class="toggle" id="scatter">散点图</label>
+                                                                <label class="btn btn-transparent blue-oleo btn-no-border btn-outline  btn-sm">
+                                                                    <input type="radio" name="chartType" class="toggle" id="bar">柱状图</label>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="portlet-body">
                                                         <div id="echarts_channel" style="height:500px;margin-bottom: 20px;"></div>
@@ -123,6 +131,7 @@
             mac: 'abc' + RandomNumBoth(200, 900),
         })
     }
+    window.chartType = "scatter"; // 默认图表为散点图
     $(document).ready(function() {
         window.interval_id = 0;
         // 获取参数
@@ -173,7 +182,11 @@
             $('#mytable').bootstrapTable('showLoading');
             window.setTimeout(function() {
                 $("#autoSearch").bootstrapSwitch('disabled', false);
-                setChart1(myChart1);
+                if (window.chartType == "bar") {
+                    setChart1(myChart1);
+                } else {
+                    setScatterChart1(myChart1);
+                }
                 setListData();
                 myChart1.resize();
                 btn.stop();
@@ -188,14 +201,14 @@
             state: false,
             onColor: 'success',
             offColor: 'danger',
-            onText: '启动',
-            offText: '停止',
+            onText: 'ON',
+            offText: 'OFF',
             onSwitchChange: function(event, state) {
                 if (state == true) {
                     // 打开时警告
                     swal({
-                        title: "请先确认以下事项：",
-                        text: "必须通过有线连接到此设备,确认后无线将暂时无法使用",
+                        title: "警告：",
+                        text: "自动扫描打开后，将会提高无线网络的丢包率，\n请使用完成后及时关闭自动扫描，确保网络恢复正常。\n扫描频率为  2.4G：8秒/次；  5.8G：18秒/次。",
                         type: "warning",
                         showConfirmButton: true,
                         confirmButtonClass: "btn-danger",
@@ -211,22 +224,44 @@
                             myChart1.showLoading();
                             $('#mytable').bootstrapTable('showLoading');
                             window.setTimeout(function() {
-                                setChart1(myChart1);
+                                if (window.chartType == "bar") {
+                                    setChart1(myChart1);
+                                } else {
+                                    setScatterChart1(myChart1);
+                                }
                                 myChart1.resize();
                                 myChart1.hideLoading();
                                 $('#mytable').bootstrapTable('hideLoading');
-                                window.interval_id = window.setInterval(function() {
-                                    data = [];
-                                    for (var i = 0; i < 13; i++) {
-                                        data.push(RandomNumBoth(0, 10));
-                                    }
-                                    myChart1.setOption({
-                                        series: [{
-                                            data: data
-                                        }]
-                                    })
-                                    setListData();
-                                }, 1000)
+                                window.interval_id = window.setInterval(
+                                    function() {
+                                        if (window.chartType == "bar") {
+                                            data = [];
+                                            for (var i = 0; i < 13; i++) {
+                                                data.push(RandomNumBoth(0, 10));
+                                            }
+                                            myChart1.setOption({
+                                                series: [{
+                                                    data: data
+                                                }]
+                                            })
+                                        } else {
+                                            data = [
+                                                [RandomNumBoth(0, 12), 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                                                [RandomNumBoth(0, 12), 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                                                [RandomNumBoth(0, 12), 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                                                [RandomNumBoth(0, 12), 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                                                [RandomNumBoth(0, 12), 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                                                [RandomNumBoth(0, 12), 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                                                [RandomNumBoth(0, 12), 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                                            ];
+                                            myChart1.setOption({
+                                                series: [{
+                                                    data: data
+                                                }]
+                                            })
+                                        }
+                                        setListData();
+                                    }, 1000)
                             }, 500)
                         } else {
                             $("#autoSearch").bootstrapSwitch('state', false);
@@ -241,6 +276,40 @@
                 }
             }
         });
+
+        // 切换图表类型
+        $("input:radio[name='chartType']").change(function(e) {
+            switch ($(this).attr("id")) {
+                case "scatter":
+                    if (myChart1.getOption()) {
+                        // 转为散点图
+                        myChart1.clear();
+                        myChart1.showLoading();
+                        window.setTimeout(function() {
+                            setScatterChart1(myChart1);
+                            myChart1.hideLoading();
+                        }, 500)
+                    } else {
+                        window.chartType = "scatter";
+                    }
+                    break;
+                case "bar":
+                    if (myChart1.getOption()) {
+                        // 转为柱状图
+                        myChart1.clear();
+                        myChart1.showLoading();
+                        window.setTimeout(function() {
+                            setChart1(myChart1);
+                            myChart1.hideLoading();
+                        }, 500)
+                    } else {
+                        window.chartType = "bar";
+                    }
+                    break;
+                default:
+                    break;
+            }
+        })
 
         // 自适应窗体尺寸
         window.onresize = function() {
@@ -317,12 +386,126 @@
         if (r != null) return unescape(r[2]);
         return null; //返回参数值
     }
+
+    ////////////////////////////////////////////////////////////////////////
+    // 散点图
+    function setScatterChart1(myChart1) {
+        window.chartType = "scatter";
+        var xdata = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"];
+        myChart1.setOption({
+            title: {
+                text: '无线信道/信号强度',
+                subtext: '反映每个SSID的信号强度和所在信道',
+                left: 'center',
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: function(params) {
+                    return '<div style="border-bottom: 1px solid rgba(255,255,255, 0.3); font-size: 20px;padding-bottom: 7px;margin-bottom: 7px; font-weight: 600;">' + params.data[2] + '</div>' +
+                        "信道：" + xdata[params.data[0]] + "<br>" +
+                        "信号强度：" + (params.data[1] - 120) + "<br>" +
+                        "mac：" + params.data[3] + "<br>" +
+                        "信噪比：" + params.data[4] + "%";
+                }
+            },
+            xAxis: {
+                type: 'category',
+                name: '信道（SSID数量）',
+                boundaryGap: true,
+                splitLine: {
+                    lineStyle: {
+                        type: 'dashed'
+                    }
+                },
+                data: xdata,
+                axisLabel: {
+                    formatter: function(value, index) {
+                        var number = RandomNumBoth(0, 10);
+                        if (number == 0) {
+                            return ("{free|信道" + value + '\n（' + number + "）}");
+                        } else {
+                            return ("信道" + value + '\n（' + number + "）");
+                        }
+                    },
+                    rich: {
+                        free: {
+                            align: 'left',
+                            color: 'green'
+                        }
+                    }
+                },
+            },
+            yAxis: {
+                type: 'value',
+                name: '信号强度',
+                splitLine: {
+                    lineStyle: {
+                        type: 'dashed'
+                    }
+                },
+                min: 20,
+                max: 100,
+                minInterval: 1,
+                maxInterval: 10,
+                axisLine: {
+                    show: false,
+                },
+                axisTick: {
+                    show: false,
+                },
+                axisLabel: {
+                    showMinLabel: false,
+                    formatter: function(value, index) {
+                        return (value - 120);
+                    }
+                },
+            },
+            series: [{
+                type: 'scatter',
+                name: 'scatter',
+                symbolSize: function(value, params) {
+                    return 40;
+                },
+                itemStyle: {
+                    normal: {
+                        color: function(params) {
+                            if (params.value[4] < 33) {
+                                return "rgba(38,194,129,0.8)"
+                            } else if (params.value[4] < 66) {
+                                return "rgba(234,194,0,0.8)"
+                            } else {
+                                return 'rgba(231,80,90,0.8)';
+                            }
+                        }
+                    }
+                },
+                dimensions: [
+                    null,
+                    { name: '信号强度', type: 'number' },
+                    { name: 'ssid', type: 'ordinal' },
+                    { name: 'mac', type: 'ordinal' },
+                    { name: 'quality', type: 'number' }
+                ],
+                data: [
+                    [0, 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                    [1, 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                    [2, 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                    [2, 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                    [3, 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                    [3, 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                    [4, 0 - RandomNumBoth(30, 95) + 120, 'test' + RandomNumBoth(0, 100), ("ef:23:5r:wq:" + RandomNumBoth(10, 99)), RandomNumBoth(1, 99)],
+                ],
+            }]
+        })
+    }
     ////////////////////////////////////////////////////////////////////////
     // 柱状图
     function setChart1(myChart1) {
+        window.chartType = "bar";
         myChart1.setOption({
             title: {
-                text: '无线信道状态表',
+                text: '无线信道/SSID数量',
+                subtext: '直观反映每个信道上的SSID总数',
                 left: 'center',
             },
             tooltip: {
