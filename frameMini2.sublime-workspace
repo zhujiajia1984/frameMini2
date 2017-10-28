@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"len",
+				"length"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"ssids",
+				"ssidNames"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"black",
+				"blackListDlg"
+			],
+			[
+				"RA",
+				"RandomNumBoth"
+			],
+			[
+				"get",
+				"getOption"
+			],
+			[
+				"char",
+				"chartType"
+			],
+			[
 				"back",
 				"background-color"
 			],
@@ -84,10 +116,6 @@
 				"vlan.html"
 			],
 			[
-				"margin",
-				"margin-right"
-			],
-			[
 				"Pro",
 				"ProfilePage"
 			],
@@ -156,19 +184,19 @@
 	"buffers":
 	[
 		{
-			"file": "html_mini/scanWifi.html",
+			"file": "html_mini/vlan.html",
 			"settings":
 			{
-				"buffer_size": 29039,
+				"buffer_size": 47173,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "html_mini/quickConfig.html",
+			"file": "html_mini/scanWifi.html",
 			"settings":
 			{
-				"buffer_size": 39690,
+				"buffer_size": 32065,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -283,18 +311,26 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
+		"/D/Project/web/frameMini2/assets/global",
+		"/D/Project/web/frameMini2/assets/global/plugins",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/components_bootstrap_multiselect_dropdown.html",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/components-bootstrap-multiselect.js",
+		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
+		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
 		"/D/Project/web/frameMini2/html_mini/vlan.html",
 		"/D/Project/web/frameMini2/html_mini/scanWifi.html",
+		"/C/Users/zjj/Desktop/roma.js",
+		"/C/Users/zjj/Desktop/macarons.js",
+		"/C/Users/zjj/Desktop/infographic.js",
 		"/D/Project/web/frameMini2/html_mini/index.html",
+		"/C/Users/zjj/Desktop/shine.js",
 		"/D/Project/web/frameMini2/assets/global/plugins/iconfont/iconfont.css",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/layouts/global/scripts/quick-nav.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
-		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
-		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
 		"/D/Project/web/frameMini2/html_mini/systemInfo.html",
 		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-switch.min.js",
 		"/D/Project/web/tanzhen/assets/pages/scripts/components-bootstrap-select.min.js",
@@ -408,13 +444,7 @@
 		"/D/React/reactJs/public/App.js",
 		"/D/React/reactJs/public/index.html",
 		"/D/React/reactJs/src/App2.js",
-		"/C/Users/zjj/Desktop/oui.txt",
-		"/D/React/reactJs/public/components/Home.js",
-		"/D/React/reactJs/server.js",
-		"/D/React/reactJs/src/components/about.js",
-		"/D/React/reactJs/src/components/home.js",
-		"/D/React/reactJs/src/components/Home.js",
-		"/D/React/reactJs/src/index.html"
+		"/C/Users/zjj/Desktop/oui.txt"
 	],
 	"find":
 	{
@@ -436,6 +466,58 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mytable",
+			"addBlackList",
+			"operateEvents",
+			"editBlackList",
+			"operateEvents",
+			"editBlackList",
+			"operateEvents",
+			"editBlackList",
+			"saveBlackList",
+			"sweetalert",
+			"swal",
+			"blackListDlg",
+			"saveBlackList",
+			"handle",
+			"ssidnames",
+			"e.",
+			"ssidnames",
+			"multiselect",
+			"ssidNames",
+			"Fixed Height Dropdown",
+			"data-label",
+			"ssidNames",
+			"Fixed Height Dropdown",
+			"data-label",
+			"ssidNames",
+			"clickable_groups",
+			"clickable-groups",
+			"ssidNames",
+			"btn_class",
+			"ssidNames",
+			"ssid黑名单",
+			"devBlackList",
+			"AP模式",
+			"blackListDlg",
+			"dlgTitle",
+			"blackListDlg",
+			"黑名单",
+			"operateEvents",
+			"tableBlackList",
+			"toolbarBlackList",
+			"tab_2",
+			"新增SSID",
+			"RandomNumBoth",
+			"toolbar",
+			"tableTab0",
+			"tab_1",
+			"tab_0",
+			"setScatterChart1",
+			"手动扫描",
+			"c12e34",
+			"有线",
+			"axisLabel",
 			"switch",
 			"信号强度",
 			"yAxis",
@@ -511,46 +593,7 @@
 			"badge badge-default",
 			"iconHeader",
 			"badge badge-default",
-			"iconHeader",
-			"badge badge-default",
-			"devmode",
-			"badge badge-default",
-			"icon-",
-			"iconfont",
-			"nav navbar-nav pull-right",
-			"wifisetting.html",
-			"over",
-			"overla",
-			"blockui",
-			"toolbar",
-			"operateEvents",
-			"data-target",
-			"modal-backdrop fade in",
-			"showLoading",
-			"delSSID",
-			"ssid",
-			"uncheckAll",
-			"checkAll",
-			"复位",
-			"CPU占用率",
-			"vlan",
-			"operateEvents",
-			"保存",
-			"新增SSID",
-			"已连接终端",
-			"arrow",
-			">\n",
-			"css",
-			"\"codeintel_selected_catalogs",
-			"analytics.js",
-			"update",
-			"add",
-			"editable",
-			"homepage",
-			"></",
-			"BrowserRouter",
-			"BrowserRoutern",
-			"router"
+			"iconHeader"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -575,19 +618,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html_mini/scanWifi.html",
+					"file": "html_mini/vlan.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 29039,
+						"buffer_size": 47173,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18219,
-								18219
+								39999,
+								39999
 							]
 						],
 						"settings":
@@ -598,10 +641,10 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
-							"word_wrap": true
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 18817.0,
+						"translation.y": 28572.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -609,19 +652,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "html_mini/quickConfig.html",
+					"file": "html_mini/scanWifi.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 39690,
+						"buffer_size": 32065,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33290,
-								33290
+								11816,
+								16107
 							]
 						],
 						"settings":
@@ -631,7 +674,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 127983.0,
+						"translation.y": 12305.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
