@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-weight"
+			],
+			[
+				"remov",
+				"removeClass"
+			],
+			[
+				"btn",
+				"btn-outline"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"bo",
+				"bootstrap-switch"
+			],
+			[
+				"boot",
+				"bootstrap-switch"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"auto",
+				"autoRefresh"
+			],
+			[
+				"pull",
+				"pull-right"
+			],
+			[
 				"len",
 				"length"
 			],
@@ -66,14 +102,6 @@
 			[
 				"add",
 				"addClass〔function〕"
-			],
-			[
-				"font",
-				"font-size"
-			],
-			[
-				"mar",
-				"margin-right"
 			],
 			[
 				"cloud",
@@ -184,21 +212,12 @@
 	"buffers":
 	[
 		{
-			"file": "html_mini/vlan.html",
+			"file": "html_mini/index.html",
 			"settings":
 			{
-				"buffer_size": 47173,
+				"buffer_size": 54611,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "html_mini/scanWifi.html",
-			"settings":
-			{
-				"buffer_size": 32065,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -311,18 +330,16 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/frameMini2",
-		"/D/Project/web/frameMini2/assets/global",
-		"/D/Project/web/frameMini2/assets/global/plugins",
 		"/D/Project/web/frameMini2/html_mini"
 	],
 	"file_history":
 	[
+		"/D/Project/web/frameMini2/html_mini/scanWifi.html",
+		"/D/Project/web/frameMini2/html_mini/vlan.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/components_bootstrap_multiselect_dropdown.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/components-bootstrap-multiselect.js",
 		"/D/Project/web/frameMini2/html_mini/quickConfig.html",
 		"/D/Project/web/frameMini2/html_mini/wifisetting.html",
-		"/D/Project/web/frameMini2/html_mini/vlan.html",
-		"/D/Project/web/frameMini2/html_mini/scanWifi.html",
 		"/C/Users/zjj/Desktop/roma.js",
 		"/C/Users/zjj/Desktop/macarons.js",
 		"/C/Users/zjj/Desktop/infographic.js",
@@ -448,7 +465,7 @@
 	],
 	"find":
 	{
-		"height": 53.0
+		"height": 57.0
 	},
 	"find_in_files":
 	{
@@ -466,6 +483,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"自动刷新",
+			"switch",
+			"ssidnames",
+			"operateEvents",
+			"blackListDlg",
+			"table",
+			"mytable",
+			"operat",
+			"operate",
+			"mytable",
+			"btnRefresh",
+			"myta",
+			"btnRefresh",
+			"disabled",
+			"autoRefresh",
+			"btnRefresh",
+			"btnSearch",
+			"btnRefresh",
+			"已连接终端",
+			"autoRefresh",
+			"autoSearch",
+			"page-title",
+			"autoRefresh",
+			"autoSearch",
+			"自动",
 			"mytable",
 			"addBlackList",
 			"operateEvents",
@@ -568,32 +610,7 @@
 			"cutstr",
 			"datatable",
 			"cookie",
-			"trahs",
-			"switchCtl",
-			"operateEvents",
-			"a:first",
-			"tab",
-			"max",
-			"maxConSwitch",
-			"外网设置",
-			"网络设置",
-			"cloudAddressGroup",
-			"已连接",
-			"新增SSID",
-			"devModeSel",
-			"iconHeader",
-			"badge badge-default",
-			"iconHeader",
-			"badge badge-default",
-			"iconHeader",
-			"badge badge-default",
-			"iconHeader",
-			"badge badge-default",
-			"iconHeader",
-			"badge badge-default",
-			"iconHeader",
-			"badge badge-default",
-			"iconHeader"
+			"trahs"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -618,66 +635,34 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html_mini/vlan.html",
+					"file": "html_mini/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 47173,
+						"buffer_size": 54611,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39999,
-								39999
+								14005,
+								14005
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 28572.0,
+						"translation.y": 7715.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html_mini/scanWifi.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 32065,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11816,
-								16107
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 12305.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -685,7 +670,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 49.0
 	},
 	"input":
 	{
@@ -722,7 +707,7 @@
 	"project": "frameMini2.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 94.0
 	},
 	"save_all_on_build": true,
 	"select_file":
