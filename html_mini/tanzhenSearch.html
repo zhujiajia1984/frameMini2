@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>探针信息查询</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="../assets/global/plugins/iconfont/iconfont.css" type="text/css">
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+</head>
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
+    <div class="page-wrapper">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="javascript:;">
+                    <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" width="87" height="14"/> </a>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content" style="margin-left: 0px; ">
+                    <div class="page-bar">
+                    </div>
+                    <h1 class="page-title">探针信息查询
+                        <small></small>
+                    </h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <form class="form-inline">
+                                            <div class="form-group" style="margin-right: 10px;">
+                                                <label class="control-label" style="font-size: 14px;">探针MAC地址：</label>
+                                                <input type="text" class="form-control">
+                                                <button id="search" style="margin-left: 10px" type="button" class="btn btn-primary">查询</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">设备厂商：</label>
+                                                <div class="col-md-9">
+                                                    <label id="devCompany" class="control-label" style="word-wrap: break-word; text-align: left;"></label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">备注：</label>
+                                                <div class="col-md-9">
+                                                    <label id="details" class="control-label" style="word-wrap: break-word; text-align: left;"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/global/plugins/jquery.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="../assets/global/scripts/app.min.js " type="text/javascript "></script>
+    <script src="../assets/layouts/layout/scripts/layout.min.js " type="text/javascript "></script>
+    <script src="../assets/global/plugins/jquery.blockui.min.js " type="text/javascript "></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#search").click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#devCompany").text("");
+            $("#details").text("");
+            var url = "https://weiquaninfo.cn/wxPublicAccount/getAccessToken"
+            var xhr;
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else {
+                alert("不支持XMLHttpRequest");
+                return;
+            }
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // var result = eval(xhr.responseText); //解析json
+                    var result = xhr.responseText;
+                    console.log(result);
+                    $("#devCompany").text(result);
+                    $("#details").text(result);
+                }
+            }
+            xhr.send(null);
+        })
+    })
+    </script>
+</body>
+
+</html>

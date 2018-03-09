@@ -7,7 +7,9 @@
     "finalhandler": "^1.0.4",
     "serve-static": "^1.12.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
